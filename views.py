@@ -1,8 +1,4 @@
 ﻿
-"""
-视图模型
-"""
-
 from flask import render_template, Blueprint, redirect, url_for, flash, g
 from app import login_manger
 from form import Login_Form, Register_Form

@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2017/8/1 14:45
-# @File    : Model.py
-"""
-数据模型
-
-"""
 
 from flask_login import UserMixin
 from app import login_manger

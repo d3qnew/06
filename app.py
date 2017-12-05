@@ -1,7 +1,4 @@
 
-"""
-应用启动类
-"""
 import os
 from imp import reload
 
