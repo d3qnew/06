@@ -3,18 +3,6 @@
  */
 $(document).ready(function () {
 
-    $(":button").click(function () {
-        $.post(
-            '/checkuser',
-            {
-                username: $("#username").val(),
-                password: $("#password").val()
-            },
-            function (data) {
-                console.log(data);
-            });
-
-    });
-
+console.log('{{ mss }}');
 
 });

@@ -1,51 +1,158 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="ZH-cn">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/bootstrap.css">
 
     <title>mylch</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/js/navbar-buttom/hamburgers.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+
+
 </head>
 <body>
-<div class="navbar navbar-inverse" role="navigation">
+
+
+<div class="index-top">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">logo</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/">首页</a></li>
-                <li><a href="{{ url_for('vip') }}">vip</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('logout') }}">注销</a></li>
-                {% else %}
-                <li><a href="login">登录</a></li>
-                {% endif %}
-            </ul>
-
-
-        </div>
+        <span>全国服务热线:400-081-3338</span>
+        <span style="float: right">免费上门设计</span>
     </div>
 </div>
+
+
+<div class="container tostatic topadding0">
+    <nav class="navbar navbar-default tostatic tonoborder" role="navigation">
+        <div class=" tostatic">
+            <div class="inavbar ">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="../static/img/logo-l.png"/></a>
+                    <div class="navbar-toggle  tonopm tonoborder fleft" data-toggle="collapse"
+                         data-target="#example-navbar-collapse">
+                        <div class="hamburger-x hamburger--squeeze" aria-expanded="true">
+                            <div class="hamburger-box">
+                                <div class="hamburger-inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse tostatic" id="example-navbar-collapse">
+
+                <ul class="nav navbar-nav tostatic ">
+                    <li class="dropdown tostatic">
+                        <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                           data-toggle="dropdown">窗型概览</a>
+                        <ul class="dropdown-menu maxwidth totopauto">
+                            <div class="container tonavmenuls">
+                                <div class="navbar-top-line"></div>
+                                <li><a href="#">aaa</a></li>
+                                <li><a href="#">aaa</a></li>
+                                <li><a href="#">aaa</a></li>
+
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav tostatic ">
+                    <li class="dropdown tostatic">
+                        <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                           data-toggle="dropdown">美驰窗系统</a>
+                        <ul class=" dropdown-menu maxwidth totopauto">
+                            <div class="container tonavmenuls">
+                                <div class="navbar-top-line"></div>
+                                <li><a href="#">bbb</a></li>
+                                <li><a href="#">bbb</a></li>
+                                <li><a href="#">bbb</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav tostatic ">
+                    <li class="dropdown tostatic">
+                        <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                           data-toggle="dropdown">小区团装</a>
+                        <ul class=" dropdown-menu maxwidth totopauto">
+                            <div class="container tonavmenuls">
+                                <div class="navbar-top-line"></div>
+                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">ccc</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav tostatic ">
+                    <li class="dropdown tostatic">
+                        <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                           data-toggle="dropdown">服务中心</a>
+                        <ul class=" dropdown-menu maxwidth totopauto">
+                            <div class="container tonavmenuls">
+                                <div class="navbar-top-line"></div>
+                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">ccc</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav tostatic ">
+                    <li class="dropdown tostatic">
+                        <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                           data-toggle="dropdown">产品案例</a>
+                        <ul class=" dropdown-menu maxwidth totopauto">
+                            <div class="container tonavmenuls">
+                                <div class="navbar-top-line"></div>
+                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">ccc</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav tostatic ">
+                    <li class="dropdown tostatic">
+                        <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                           data-toggle="dropdown">品牌天地</a>
+                        <ul class=" dropdown-menu maxwidth totopauto">
+                            <div class="container tonavmenuls">
+                                <div class="navbar-top-line"></div>
+                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">ccc</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
 
 {% block content %}
 {% endblock %}
 
 
-<script type="text/javascript" src="../static/js/lib/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../static/js/myjs/myjs.js"></script>
+<script src="../static/js/lib/jquery-3.2.1.js"></script>
+<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/js/myjs/myjs.js"></script>
+<script src="../static/js/navbar-buttom/buttonjs.js"></script>
+<script src="../static/js/myjs/navbar.open.js"></script>
+
 {% block js %}
-<script type="text/javascript" src="../static/js/myjs/index.js"></script>
+<script src="../static/js/myjs/index.js"></script>
 {% endblock %}
 
 

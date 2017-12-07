@@ -1,8 +1,18 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <div class="page-header">
-        <h1>Hello,{{ username }}</h1>
-    </div>
+<div class="page-header">
+    <h1>Hello,{{ username }}</h1>
+</div>
 
+this is vip
+
+{% endblock %}
+{% block js %}
+
+<script src="../static/js/myjs/vip.js"></script>
+<script>
+    {{ mss|safe }}
+
+</script>
 {% endblock %}

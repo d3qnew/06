@@ -10,6 +10,7 @@ from app import db, app
 @app.before_request
 def before_request():
     g.user = current_user
+    #print(g.user)
 
 
 @app.route('/')
@@ -32,10 +33,10 @@ def login():
         if user is not None and user.password == form.password.data:
             login_user(user)
             # flash('登录成功')
-            return render_template('vip.html', username=form.username.data)
+            return render_template('vip.html', username=form.username.data,mss = "alert('登录成功');")
         else:
             # flash('用户或密码错误')
-            return render_template('login.html', form=form)
+            return render_template('login.html', form=form,mss = '用户或密码错误')
     else:
         return render_template('login.html', form=form)
 
@@ -48,21 +49,22 @@ def logout():
     # flash('你已退出登录')
     return redirect(url_for('index'))
 
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    print('ok')
-    form = Register_Form()
-    if form.validate_on_submit():
-        user = Users(username=form.username.data, password=form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        # flash('注册成功')
-        return redirect(url_for('index'))
-    return render_template('register.html', form=form)
+#注册
+# @app.route('/register', methods=['GET', 'POST'])
+# def register():
+#     print('ok')
+#     form = Register_Form()
+#     if form.validate_on_submit():
+#         user = Users(username=form.username.data, password=form.password.data)
+#         db.session.add(user)
+#         db.session.commit()
+#         # flash('注册成功')
+#         return redirect(url_for('index'))
+#     return render_template('register.html', form=form)
 
 
 @app.route('/vip')
 @login_required
 def vip():
+
     return render_template('vip.html', username=g.user)
