@@ -4885,7 +4885,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     position: relative;
     display: block;
     padding: 10px 0px 10px 0px;
-    margin-left: 40px;
+    margin-left: 30px;
     font-size: 18px;/////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
@@ -5235,13 +5235,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
     color: #fff !important;
     text-align: center;
-    width: 200px;
-    height: 50px;
+    height: 64px;
     padding: 15px 15px;
     font-size: 20px;
     line-height: 20px;
     float: left;
     margin-right: 15px;
+    margin-bottom: 15px;
 
 }
 
@@ -5253,6 +5253,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 .navbar-brand > img {
     display: block;
+    height: 48px;
+
 }
 
 @media (min-width: 768px) {
