@@ -46,4 +46,4 @@ def load_user(user_id):
 from views import *
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', debug=False,port='80')
+    app.run('0.0.0.0', debug=False,port='5000')
