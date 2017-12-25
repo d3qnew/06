@@ -1,0 +1,52 @@
+﻿{% extends "layout.html" %}
+
+
+{% block css %}
+<style>
+    .news_next {
+        color: #e71f19;
+        border: 2px solid;
+        padding: 10px 20px;
+        float: right;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container" id="newsmain">
+    <ol>
+        <li style="position: static; clear: both;" v-for="n in news">
+            <img style="float: left;" v-bind:src="[[ n.img[0] ]]">
+            <div style="display: block;">
+                <p>[[ n.title ]]</p>
+                <p v-for="p in n.zhengwen"> [[ p ]] </p>
+            </div>
+            <a class="news_next" href="#">查看详细</a>
+            <div style="clear: both;text-align: center; ">[[ n.year ]]，[[ n.adders ]]</div>
+        </li>
+    </ol>
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+
+    var txt = zhuanma.htmlDecodeByRegExp("{{txt}}");
+    txt = $.parseJSON(txt.replace(/'/g, '"'));
+    for (var i in txt){
+        txt[i].year = formatdaste(txt.year);
+    }
+
+    var vm = new Vue({
+        el: '#newsmain',
+        data: {
+            news: txt
+        },
+        delimiters: ['[[', ']]']
+
+    });
+
+
+</script>
+
+
+{% endblock %}

@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="ZH-cn">
+<html lang="zh-cn">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <title>mylch</title>
 
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="shortcut icon" href="../static/img/logo-s.png" type="../static/img/logo-s.png">
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../static/js/navbar-buttom/hamburgers.css">
     <link rel="stylesheet" href="../static/css/main.css">
 
+    {% block css %}
+    {% endblock %}
 
 </head>
 <body>
@@ -16,7 +25,7 @@
 
 <div class="index-top">
     <div class="container">
-        <span>全国服务热线:400-081-3338</span>
+        <span>全国服务热线：400-081-3338</span>
         <span style="float: right">免费上门设计</span>
     </div>
 </div>
@@ -27,7 +36,7 @@
         <div class=" tostatic">
             <div class="inavbar ">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><img src="../static/img/logo-l.png"/></a>
+                    <a class="navbar-brand" href="/"><img src="../static/img/logo-l.png"/></a>
                     <div class="navbar-toggle  tonopm tonoborder" data-toggle="collapse"
                          data-target="#example-navbar-collapse">
                         <div class="hamburger-x hamburger--squeeze" aria-expanded="true">
@@ -47,10 +56,10 @@
                         <ul class="dropdown-menu maxwidth totopauto">
                             <div class="container tonavmenuls">
                                 <div class="navbar-top-line"></div>
-                                <li><a href="#">新闻中心</a></li>
-                                <li><a href="#">关于美驰</a></li>
-                                <li><a href="#">美驰荣耀</a></li>
-                                <li><a href="#">合作伙伴</a></li>
+                                <li><a href="/story">品牌故事</a></li>
+                                <li><a href="/news">品牌动态</a></li>
+                                <li><a href="#">世界权威认证</a></li>
+                                <li><a href="#">加入我们</a></li>
 
                             </div>
                         </ul>
@@ -64,9 +73,9 @@
                         <ul class=" dropdown-menu maxwidth totopauto">
                             <div class="container tonavmenuls">
                                 <div class="navbar-top-line"></div>
-                                <li><a href="#">bbb</a></li>
-                                <li><a href="#">bbb</a></li>
-                                <li><a href="#">bbb</a></li>
+                                <li><a href="#">极简生活</a></li>
+                                <li><a href="#">轻奢品质</a></li>
+                                <li><a href="#">传世至尊</a></li>
                             </div>
                         </ul>
                     </li>
@@ -79,28 +88,16 @@
                         <ul class=" dropdown-menu maxwidth totopauto">
                             <div class="container tonavmenuls">
                                 <div class="navbar-top-line"></div>
-                                <li><a href="#">ccc</a></li>
-                                <li><a href="#">ccc</a></li>
-                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">如何选购</a></li>
+                                <li><a href="#">常见问题</a></li>
+                                <li><a href="#">售后服务</a></li>
+                                <li><a href="#">意见反馈</a></li>
+                                <li><a href="#">查找零售店</a></li>
                             </div>
                         </ul>
                     </li>
                 </ul>
 
-                <ul class="nav navbar-nav tostatic ">
-                    <li class="dropdown tostatic">
-                        <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
-                           data-toggle="dropdown">小区团装</a>
-                        <ul class=" dropdown-menu maxwidth totopauto">
-                            <div class="container tonavmenuls">
-                                <div class="navbar-top-line"></div>
-                                <li><a href="#">ccc</a></li>
-                                <li><a href="#">ccc</a></li>
-                                <li><a href="#">ccc</a></li>
-                            </div>
-                        </ul>
-                    </li>
-                </ul>
 
                 <ul class="nav navbar-nav tostatic ">
                     <li class="dropdown tostatic">
@@ -109,9 +106,9 @@
                         <ul class=" dropdown-menu maxwidth totopauto">
                             <div class="container tonavmenuls">
                                 <div class="navbar-top-line"></div>
-                                <li><a href="#">ccc</a></li>
-                                <li><a href="#">ccc</a></li>
-                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">保温系统</a></li>
+                                <li><a href="#">静音系统</a></li>
+                                <li><a href="#">密封系统</a></li>
                             </div>
                         </ul>
                     </li>
@@ -120,18 +117,23 @@
                 <ul class="nav navbar-nav tostatic ">
                     <li class="dropdown tostatic">
                         <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
-                           data-toggle="dropdown">窗型概览</a>
+                           data-toggle="dropdown">产品中心</a>
                         <ul class=" dropdown-menu maxwidth totopauto">
                             <div class="container tonavmenuls">
                                 <div class="navbar-top-line"></div>
-                                <li><a href="#">ccc</a></li>
-                                <li><a href="#">ccc</a></li>
-                                <li><a href="#">ccc</a></li>
+                                <li><a href="#">dr65</a></li>
+                                <li><a href="#">m76</a></li>
+                                <li><a href="#">ex88</a></li>
+                                <li><a href="#">意大利Mixall</a></li>
+                                <li><a href="#">国匠传奇铝包木</a></li>
+                                <li><a href="#">德国贝伦思1909</a></li>
+                                <li><a href="#">ds70外开门</a></li>
+                                <li><a href="#">提升推拉门</a></li>
+                                <li><a href="#">倾开推拉门</a></li>
                             </div>
                         </ul>
                     </li>
                 </ul>
-
 
 
             </div>
@@ -140,20 +142,109 @@
 </div>
 
 
-
-
 {% block content %}
 {% endblock %}
 
 
+
+
+
+<div class="container-fluid main-floor">
+    <div class="container">
+        <ul class=" col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+            <li><span>窗型概览</span>
+                <ul>
+                    <li>dr65</li>
+                    <li>m76</li>
+                    <li>ex88</li>
+                    <li>意大利Mixall</li>
+                    <li>国匠传奇铝包木</li>
+                    <li>德国贝伦思1909</li>
+                    <li>ds70外开门</li>
+                    <li>提升推拉门</li>
+                    <li>倾开推拉门</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+            <li><span>品牌天地</span>
+                <ul>
+                    <li>品牌故事</li>
+                    <li>品牌动态</li>
+                    <li>世界权威认证</li>
+                    <li>加入我们</li>
+
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+            <li><span>合作伙伴</span>
+                <ul>
+                    <li>政企采购</li>
+                    <li>成为合作伙伴</li>
+                    <li>渠道商加盟</li>
+                    <li>开发商采购</li>
+                    <li>设计师合作</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+            <li><span>服务中心</span>
+                <ul>
+                    <li>如何选购</li>
+                    <li>常见问题</li>
+                    <li>售后服务</li>
+                    <li>意见反馈</li>
+                    <li>查找零售店</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+            <li><span>产品案例</span>
+                <ul>
+                    <li>极简生活</li>
+                    <li>轻奢品质</li>
+                    <li>传世至尊</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+            <li><span>美驰门窗系统</span>
+                <ul>
+                    <li>保湿系统</li>
+                    <li>静音系统</li>
+                    <li>密封系统</li>
+                    <li><img src="../static/img/qr.png"></li>
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div style="color:#fff;text-align:center;border-top: 1px #0fff solid; height: 48px;line-height: 48px;background-color:#e71f19 ">
+    &copy; {{ year }} - 美驰集团 京icp05058264号
+</div>
+
 <script src="../static/js/lib/jquery-3.2.1.js"></script>
-<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script src="../static/js/myjs/myjs.js"></script>
+<script src="../static/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/myjs/layout.js"></script>
+<script src="../static/js/myjs/lib.js"></script>
 <script src="../static/js/navbar-buttom/buttonjs.js"></script>
 <script src="../static/js/myjs/navbar.open.js"></script>
+<script src="../static/js/lib/lazysizes.min.js"></script>
+<script src="../static/js/lib/vue.js"></script>
+<script src="../static/js/myjs/zhuanma.js"></script>
+
 
 {% block js %}
-<script src="../static/js/myjs/index.js"></script>
+
 {% endblock %}
 
 
