@@ -1,0 +1,45 @@
+﻿{% extends "layout.html" %}
+
+
+{% block css %}
+<style>
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="container" id="newsmain">
+
+    <h1>[[ news['title']  ]]</h1>
+    <div v-for="n in news['img']">
+        <img v-bind:src="[[ n ]]">
+    </div>
+    <div >
+        <p v-for="p in news['zhengwen']">[[ p ]]</p>
+
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+
+    var txt = zhuanma.htmlDecodeByRegExp("{{txt}}");
+    txt = $.parseJSON(txt.replace(/'/g, '"'));
+        txt.year = formatdaste(txt.year);
+    var vm = new Vue({
+        el: '#newsmain',
+        data: {
+            news: txt
+        },
+        delimiters: ['[[', ']]']
+
+    });
+
+</script>
+
+
+{% endblock %}

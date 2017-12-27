@@ -7791,8 +7791,8 @@ button.close {
 }
 
 .carousel-caption {
-    width: 600px;
-    height: 100px;
+    width: 100%;
+    height: 4em;
     background-color: #fff;
     position: relative;
     z-index: 10;

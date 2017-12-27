@@ -1,5 +1,5 @@
 ﻿from datetime import datetime
-from flask import render_template, Blueprint, redirect, url_for, flash, g,jsonify
+from flask import render_template, Blueprint, redirect, url_for, flash, g, jsonify, request, abort
 from app import login_manger
 from form import Login_Form, Register_Form
 from model import Users
@@ -82,12 +82,28 @@ def story():
     )
 
 
-@app.route('/news')
+@app.route('/news', methods=['GET', 'POST'])
 def news():
-    return render_template(
-        'news.html',
-        title='品牌动态',
-        year=datetime.now().year,
-        txt=txt['news']
+    newsls = []
+    for i in range(len(txt['news'])):
+        newsls.append(txt['news'][i]['id'])
+    try:
+        id = request.args.get('id', '')  # 获取GET参数，没有参数就赋值 0
+    except ValueError:
+        abort(404)  # 返回 404
 
-    )
+    if (id != '' and id in newsls):
+        return render_template(
+            'newstopic.html',
+            title='品牌动态',
+            year=datetime.now().year,
+            txt=txt['news'][int(id)]
+        )
+    else:
+         return render_template(
+            'news.html',
+            title='品牌动态',
+            year=datetime.now().year,
+            txt=txt['news']
+
+        )

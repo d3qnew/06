@@ -6,6 +6,9 @@ ul,li {
     list-style: none !important;
 }
 
+[v-cloak] {
+   display:none;
+}
 
 
 * {
@@ -27,7 +30,7 @@ ul,li {
 body {
 
     font-weight: 300;
-    min-width: 350px !important;
+    min-width: 480px !important;
 
     font-family: Arial, Roboto, Helvetica Neue, Helvetica, sans-serif;
     font-size: 16px;
@@ -307,3 +310,31 @@ a:hover {
 .main-floor-ul li{
 
 }
+
+.cebianlan{
+    position: fixed;
+    float: right;
+    right:0px;
+    height: 202px;
+
+    top:35%;
+    z-index: 998;
+    display: none;
+}
+
+.cebianlan a{
+    background-color: #e71f19;
+    display: block;
+}
+.cebianlan a:hover{
+    background-color: #b20002;
+}
+
+  @media (min-width: 992px) {
+    .cebianlan{
+        display: block;
+    }
+      .carousel-caption{
+          width:600px ;
+      }
+  }

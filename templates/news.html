@@ -20,7 +20,7 @@
                 <p>[[ n.title ]]</p>
                 <p v-for="p in n.zhengwen"> [[ p ]] </p>
             </div>
-            <a class="news_next" href="#">查看详细</a>
+            <a class="news_next" v-bind:href="[[ '/news?id='+n.id ]] ">查看详细</a>
             <div style="clear: both;text-align: center; ">[[ n.year ]]，[[ n.adders ]]</div>
         </li>
     </ol>
