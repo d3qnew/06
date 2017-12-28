@@ -26,6 +26,18 @@ def l_index():
 
     )
 
+@app.route('/xtest', methods=['GET', 'POST'])
+def xtest():
+     p = request.form['text']
+     print(p)
+     return render_template(
+         'xtest.html',
+         title='xtest',
+         year=datetime.now().year,
+
+     )
+
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -81,7 +93,7 @@ def story():
 
     )
 
-
+#新闻
 @app.route('/news', methods=['GET', 'POST'])
 def news():
     newsls = []
@@ -107,3 +119,22 @@ def news():
             txt=txt['news']
 
         )
+
+#加入我们
+@app.route('/joinus')
+def joinus():
+    return render_template(
+        'joinus.html',
+        title='joinus',
+        year=datetime.now().year
+
+    )
+
+#权威认证
+@app.route('/Certification')
+def Certification():
+    return render_template(
+        'Certification.html',
+        title='Certification',
+        year=datetime.now().year
+    )
