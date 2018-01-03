@@ -1,0 +1,106 @@
+﻿{% extends "layout.html" %}
+{% block css %}
+
+<style>
+    #container {
+        min-width: 600px;
+        min-height: 767px;
+    }
+
+    #city {
+        height: 30px;
+        display: none;
+    }
+</style>
+
+
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div>
+        <input id="address" type="textbox" value="北京">
+        <button onclick="codeAddress()">查询</button>
+    </div>
+</div>
+<div class="container">
+
+    <div style="width: 100%;" id="container"></div>
+</div>
+
+{% endblock %}
+{% block js %}
+
+<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+<script>
+    var citylocation, map = null;
+    var center = new qq.maps.LatLng(39.916527, 116.397128);
+    map = new qq.maps.Map(document.getElementById('container'), {
+        center: center,
+        zoom: 11
+    });
+
+    //获取城市列表接口设置中心点
+    citylocation = new qq.maps.CityService({
+        complete: function (result) {
+            var ctname = result.detail.name;
+            //console.log(ctname);
+            map.setCenter(result.detail.latLng);
+            var infoWin = new qq.maps.InfoWindow({
+                map: map
+            });
+            $.post(
+                '/showcity',
+                {
+                    ctname: ctname
+                },
+                function (data) {
+                    var p = [];
+                    var data = eval(data);
+                    //console.log(data);
+                    for (var i in data) {
+                        //console.log(i);
+                        p[i] = new qq.maps.LatLng(data[i]['lat'], data[i]['lng']);
+                        (function (n) {             ///下面不能用i
+                            var marker = new qq.maps.Marker({    //标记
+                                position: p[n],
+                                map: map
+                            });
+                            qq.maps.event.addListener(marker, 'click', function () {   //点击标签
+                                infoWin.open();
+                                infoWin.setContent('<div style=" white-space:nowrap;margin:10px;">' +
+                                    zhenglibiaoqian(data[n]) + '</div>');
+                                infoWin.setPosition(p[n]);
+                            });
+                        })(i);
+                    }
+
+                });
+
+
+        }
+    });
+    //调用searchLocalCity();方法    根据用户IP查询城市信息。
+    citylocation.searchLocalCity();
+
+    function codeAddress() {
+        var address = document.getElementById("address").value;
+        //通过getLocation();方法获取位置信息值
+        citylocation.searchCityByName(address);
+    }
+
+
+    function zhenglibiaoqian(arr) {
+        var res = '';
+        var tt = ["title", "tel", "contacts", "adders"];
+        for (var i in tt) {
+            if (typeof(arr[tt[i]]) == 'string' && arr[tt[i]] != '') {
+                res += '<p>' + arr[tt[i]] + '</p>';
+            }
+        }
+        return (res);
+    }
+
+
+</script>
+
+{% endblock %}

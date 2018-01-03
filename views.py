@@ -127,14 +127,31 @@ def joinus():
         'joinus.html',
         title='joinus',
         year=datetime.now().year
-
     )
 
 #权威认证
 @app.route('/Certification')
-def Certification():
+def certification():
     return render_template(
-        'Certification.html',
+        'certification.html',
         title='Certification',
         year=datetime.now().year
     )
+
+#经销商地图
+@app.route('/agency')
+def agency():
+    return render_template(
+        'agency.html',
+        title='agency',
+        year=datetime.now().year
+    )
+
+@app.route('/showcity',methods=['POST'])
+def showcity():
+    p = request.form['ctname']
+    if p in txt['agency']:
+        rq = txt['agency'][p]
+    else:
+        rq = txt['agency']['北京市']
+    return str(rq)
