@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+{% block css %}
+
+<style>
+    .col-xs-12, .col-sm-12, .col-md-6, .col-lg-6 {
+        float: left;
+    }
+
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        padding: 0;
+    !important;
+        margin: 0;
+    !important;
+    }
+
+    .img-l {
+        height: 100%;
+    }
+
+    @media screen and (min-width: 992px) {
+            .danyuan {
+                width: 100%;
+                height: 888px;
+                overflow: hidden;
+            }
+
+            .wenben{
+                float: right;
+                margin-top: -888px;
+            }
+    }
+
+    .baowen-bq {
+        position: absolute;
+        margin-top: 3em;
+        width: 300px;
+        height: 200px;
+    }
+
+
+
+
+</style>
+
+
+{% endblock %}
+{% block content %}
+<div style="background-color: #d8d8d8;text-align: center;">
+    <div style="width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="baowen-bq">
+                    <h1 style="margin-bottom: 30px;">静音系统</h1>
+                    <span>超强静音,更加安静</span><br>
+                    <img src="../static/img/xitong/jingyin/00.png" style="width: 80px ;height: 80px;margin-top: 20px;"/>
+                </div>
+            </div>
+        </div>
+        <img src="../static/img/xitong/jingyin/01.jpg"/>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #efefef;">
+    <img style="float: left;" src="../static/img/xitong/jingyin/02.jpg"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 wenben">
+                <div style="padding-top: 5em">
+                    <p>
+                        随着经济的发展，噪音污染越来越严重，人类居住环境也面临室外噪音干扰的威胁，因此，人们对于门窗的隔音性能的要求也越来越高。美驰门窗始终秉承“使人类居住环境更加恬静”的理念，凭借雄厚的技术实力，专注于提高门窗隔音性能方面的技术研发。
+                    </p>
+                    <h3>美国超级中空玻璃</h3>
+                    <p>美驰门窗配置源自美国的中空玻璃，双腔中空结构，空气层起着缓冲的弹性作用，隔音效果超越普通玻璃，有效隔绝室外噪音。</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #d8d8d8;">
+    <img style="float: right" src="../static/img/xitong/jingyin/03.jpg"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 wenben" style="float: left">
+                <div  style="padding-top: 5em;">
+                    <h3>super spacer间隔条</h3>
+                    <p>
+                        携手德国原装进口super spacer超级间隔条， 是一种热固弹性微孔结构，硅酮材料， 内含干燥剂，并用挤出技术制成，具有超强的密封性。可以有效的隔绝室外噪音， 隔音性能达到4级，
+                        隔声效果最高达到42dB，高于我国门窗隔音性能的最低标准——25-30dB，这一技术被广泛的应用于高铁。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="danyuan" style="background-color: #efefef">
+    <img style="float: left;"  src="../static/img/xitong/jingyin/04.jpg"/>
+    <div class="container">
+        <div class="row">
+            <div style="float: right" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 wenben">
+                <div style="padding-top: 5em">
+                    <h3>精制级铝型材</h3>
+                    <p>
+                        始终采用壁厚2.0mm的精制级铝型材（国标为1.4mm），且多腔体结构，比起其他普通型材更能有效隔绝室外噪音传入室内。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #d8d8d8;">
+    <img style="float: right" src="../static/img/xitong/jingyin/05.jpg"/>
+    <div class="container">
+        <div class="row">
+            <div style="float: left;" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 wenben">
+                <div style="padding-top: 5em;">
+                    <h3>优质木材</h3>
+                    <p>
+                        优质木材能够反射90%以上的入射声，声音在投射过程中还能对多余的振动进行适度的吸收，起到了良好的隔音效果。美驰门窗选用优质木材，将采集后的原木，通过多道工序，制成集成材，密度更高，隔音效果优于普通木材。
+                    </p>
+
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="danyuan" style="background-color: #efefef">
+    <img style="float: left;" src="../static/img/xitong/jingyin/06.jpg"/>
+    <div class="container">
+        <div class="row">
+            <div style="float: right;" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 wenben">
+                <div style="padding-top: 5em">
+                    <h3>密封胶条</h3>
+                    <p>
+                        采用三元乙丙密封胶条，柔软有弹性，能防止门窗因密封不好而将噪音传入室内，隔音效果显著。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+    $(function () {
+        $(".danyuan > img").addClass("img-l");
+    })
+</script>
+
+{% endblock %}

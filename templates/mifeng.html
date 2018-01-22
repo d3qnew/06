@@ -1,0 +1,290 @@
+{% extends "layout.html" %}
+{% block css %}
+
+<style>
+    .col-xs-12, .col-sm-12, .col-md-6, .col-lg-6 {
+        float: left;
+    }
+
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        padding: 0;
+    !important;
+        margin: 0;
+    !important;
+    }
+
+    .img-l {
+        height: 100%;
+        width: 100%;
+    }
+
+    .baowen-bq {
+        position: absolute;
+        margin-top: 3em;
+        width: 300px;
+        height: 200px;
+    }
+
+    .baowen-ditu-ul {
+        margin-left: -4em;
+    }
+
+    .baowen-ditu-ul li {
+        margin-left: 1em;
+    }
+
+    .baowen-tb {
+        width: 220px;
+        height: 80px;
+        border: 2px #999 solid;
+    }
+
+    .baowen-tb td {
+        text-align: center;
+        line-height: 18px;
+    }
+
+    .fudong {
+        position: absolute;
+        -webkit-box-shadow: 0px 5px 25px 0px rgba(64, 64, 64, 0.3);
+        -moz-box-shadow: 0px 5px 25px 0px rgba(64, 64, 64, 0.3);
+        box-shadow: 0px 5px 25px 0px rgba(64, 64, 64, 0.3);
+        border-radius: 100px !important;
+        display: none;
+        width: 150px;
+        height: 150px;
+
+    }
+
+
+
+
+    .danyuan {
+        position: relative;
+    }
+
+    @media screen and (min-width: 1600px) {
+        .fudong {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        .danyuan {
+            width: 100%;
+            height: 888px;
+            overflow: hidden;
+
+        }
+
+        .wenben {
+            float: right;
+            margin-top: -888px;
+        }
+    }
+
+
+</style>
+
+
+{% endblock %}
+{% block content %}
+<div style="background-color: #d8d8d8;text-align: center">
+    <div style="width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="baowen-bq">
+                    <h1 style="margin-bottom: 30px;">密封系统</h1>
+                    <span>环环相扣,妙不可言</span><br>
+                    <img src="../static/img/xitong/mifeng/00.png" class="img-nomore" style="margin-top: 20px;"/>
+                </div>
+            </div>
+        </div>
+        <img style="width: 100%;" class="img-l" src="../static/img/xitong/mifeng/01.jpg"/>
+
+
+    </div>
+
+</div>
+
+
+<div class="danyuan" style="background-color: #efefef">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img style="float: left;" class="img-l" src="../static/img/xitong/mifeng/02.jpg"/>
+                <img src="../static/img/xitong/mifeng/01-1.png" class="fudong fangda" style="top:51%; left:42%; "/>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="float: right;">
+                <div style="padding-top: 100px">
+                    <p>
+                        门窗作为居室最外界也是最薄弱的保护环节，如果缺少超强的耐候性，那么日益频繁的狂风、暴雨、扬尘、雾霾等恶劣天气会对我们的日常生活造成不好的影响，美驰门窗针对南北方不同地区的气候情况以及会面临的一些天气变化，为广大用户提供更高效的窗系统解决方案。在产品的研发设计中，我们更加重视门窗的密封性能，因为好的密封性直接影响门窗的保温、隔音、耐候及耐久等性能，是门窗功能性得以完美实现的基础。
+                    </p>
+                    <h3>美驰特殊工艺</h3>
+                    <p>
+                        美驰门窗的组角自锁对齐以及木材饰面的直角榫接，都使得门窗更加的严丝合缝，密封性好。
+                    </p>
+                </div>
+                <div>
+                    <img src="../static/img/xitong/mifeng/02-1.png"/>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #d8d8d8">
+    <div style="float:right;position: relative;">
+        <img class="img-l" src="../static/img/xitong/mifeng/03.jpg"/>
+        <img src="../static/img/xitong/mifeng/03-1.png" class="fudong fangda" style="top: 36%;left: -16%;"/>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div style="float: left" class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                <div style="padding-top: 100px;">
+                    <h3>三元乙丙密封胶条</h3>
+                    <p>
+                        采用欧洲进口的三元乙丙密封胶条，以及多道密封的设计，防潮防漏，对门窗的水密性和气密性起着非常重要的作用。
+                        采用嵌入固定法，防止脱落，有效的保证了门窗的密封性，以达到低能耗的效果。
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<div class="danyuan" style="background-color: #efefef">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-l" src="../static/img/xitong/mifeng/04.jpg"/>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" style="float: right;">
+                <div style=" padding-top: 100px;">
+                    <h3>COEX热熔胶技术 </h3>
+                    <p>
+                        COEX 密封金属丝内置于恩欣格隔热型材支脚中，其密封性的尼龙芯外面包裹一层热熔胶，涂层期间通过温度影响，外层熔化，激活 COEX
+                        密封线。为可靠防潮，完美密封提供强大的防潮及密封性。使得美驰门窗的气密性、水密性均能达到国家最高标准，更适应南方的阴冷潮湿，以及北方的寒冷风沙。
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #d8d8d8">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="float: right;padding-top: 8%;padding-right: 1%">
+        <img class="img-l" src="../static/img/xitong/mifeng/05.jpg"/>
+        <img src="../static/img/xitong/mifeng/04-2.png" class="fudong fangda" style="left: 34%;top: 31%;z-index: 1"/>
+    </div>
+    <div class="container" style="height: 100%;position: relative">
+        <img class="img-nomore" src="../static/img/xitong/mifeng/04-1.jpg" style="position: absolute;bottom: 0px;"/>
+        <div class="row" style="padding-top: 100px">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div>
+                    <h3>欧标13系U槽五金</h3>
+                    <p>
+                        德国原装进口的欧标13系U槽五金，多锁点配置，环状锁紧机构，启闭顺畅的同时也保证了良好的密封性。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #efefef">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="float: left;height: 100%;padding-top: 5%;">
+        <img class="img-l" src="../static/img/xitong/mifeng/06.jpg"/>
+    </div>
+    <div class="container" style="padding-top: 100px;">
+        <div class="row">
+            <div style="float: right;" class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                <div>
+                    <h3>型材结构</h3>
+                    <p>采用超厚高精级铝型材，加上内部结构为多腔设计，结构稳定，经久耐用，避免因门窗型材变形，而出现的漏风漏雨等密封问题。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #d8d8d8">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="float: right;height: 100%;">
+        <img class="img-l" src="../static/img/xitong/mifeng/07.jpg"/>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                <div style="padding-top: 100px;">
+                    <h3>成熟的安装技巧及经验</h3>
+                    <p>
+                        美驰门窗二十多年成熟的安装经验，总结出精确的洞口测算方式，并且采用先安装副框，后安装主框的安装方式，安装精度高，施工质量好，能够确保框与墙体的紧密连接；副框采用防腐木材加工制作，同时应用德式窗特有的窗翅固定，增强防水性，防止窗体腐蚀变形，同时保证门窗密封性能。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+{% block js %}
+
+
+<script>
+
+    $(function () {
+
+        $(".fudong").on("ready", function () {
+            var ll = $(this).css("left");
+            var tt = $(this).css("top");
+            var xl = ll.substring(0, ll.length - 1);
+            var xt = tt.substring(0, tt.length - 1);
+
+            console.log(xl);
+        });
+
+        /*
+         $(".fudong").hover(function () {
+         var ll = $(this).css("left");
+         var tt = $(this).css("top");
+         var xl = parseInt(ll.substring(0, ll.length - 1));
+         var xt = parseInt(tt.substring(0, tt.length - 1));
+         $(this).stop(false, true).animate({
+         width: "200px",
+         height: "200px",
+         left: (xl - 25),
+         top: (xt - 25)
+         }, "normal");
+         }, function () {
+         var ll = $(this).css("left");
+         var tt = $(this).css("top");
+         var xl = parseInt(ll.substring(0, ll.length - 1));
+         var xt = parseInt(tt.substring(0, tt.length - 1));
+         $(this).stop(false, true).animate({
+         width: "150px",
+         height: "150px",
+         left: (xl + 25),
+         top: (xt + 25)
+         }, "normal");
+         }
+         );
+         */
+
+    });
+
+</script>
+
+
+{% endblock %}

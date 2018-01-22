@@ -47,6 +47,7 @@
          s = s.replace(/&nbsp;/g," ");
          s = s.replace(/&#39;/g,"\'");
          s = s.replace(/&quot;/g,"\"");
+         s = s.replace(/&#34;/g,"\"");
          return s;
    }
 };

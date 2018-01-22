@@ -1,0 +1,376 @@
+{% extends "layout.html" %}
+{% block css %}
+<style>
+    .col-xs-12, .col-sm-12, .col-md-4, .col-lg-4 {
+        float: left;
+    }
+
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        padding: 0;
+    !important;
+        margin: 0;
+    !important;
+    }
+
+    .img-l {
+        width: 100%;
+    }
+
+    .zunxiangfuwu {
+        text-align: center;
+    }
+
+    .zunxiangfuwu li {
+        width: 22%;
+        display: inline-block;
+        color: #fff;
+        background-color: #e71f19;
+        padding: 15px 30px;
+        margin: 0 5px;
+    }
+
+    .tubiaodiv div img {
+        border-radius: 22px !important;
+    }
+
+    @media screen and (min-width: 992px) {
+        .shejishijianjie {
+            padding: 0 15px;
+        }
+
+        .duanwen {
+            margin-top: 4em;
+        }
+
+        .weixin {
+            text-align: center;
+            line-height: 2em;
+        }
+
+        .weixin p {
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.5em;
+            margin-top: 0;
+        }
+
+        .weixin_l {
+            padding-right: 30px;
+        }
+
+        .weixin-r {
+            padding-left: 30px;
+        }
+
+        .zunxiangfuwu {
+            text-align: center;
+        }
+
+        .zunxiangfuwu li {
+            margin: 0 15px;
+            float: none;
+            width: 200px;
+            display: inline-block;
+        }
+
+        .zunxiangfuwu p:before {
+            text-align: center;
+        }
+
+        .zunxiangfuwu_tree {
+            text-align: center;
+        }
+
+        .zunxiangfuwu_tree embed {
+            width: 80%;
+        }
+
+        #tubiao img {
+            margin: 16px;
+        }
+
+        .tubiao_zhu {
+            margin-top: 1em;
+            text-align: center;
+        }
+
+        .tubiaodiv {
+            padding: 0 32px;
+
+        }
+
+        td p {
+            text-align: center !important;
+        }
+
+        .to-textcenter {
+            text-align: center;
+        }
+
+        .row {
+            border-top: 1px solid #ccc;
+            padding: 30px 0;
+        }
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row" style="border:none;padding: 0;margin: 0">
+        <img class="img-l" src="../static/img/fuwu/01.png"/>
+    </div>
+
+    <div class="row" style="border:none;">
+        <h2>服务体系</h2>
+        <p>
+            客户满意是一切工作的核心，美驰把企业定位为“服务行业”，用服务统领全局，所以美驰提供给客户的，除专业以及高品质的产品外，还包括服务以及美驰所倡导的生活方式。以差异化、个性化的市场需求为导向、优质产品为宗旨、科技进步为先导、用户满意为目标，是美驰质量体系和品牌建设的指导思想。</p>
+        <p>
+            美驰凭借22年丰富广泛的服务经验，依托公司各岗位在职15年以上的巨匠级员工，从售前、售中、售后全方位设计门窗服务规范化流程，环环相扣、层层保障，确保给客户带来完美的购买和使用体验。
+        </p>
+
+
+    </div>
+
+
+    <div id="tubiao" class="row">
+
+        <div class="tubiaodiv col-xs-12, col-sm-12, col-md-4, col-lg-4">
+            <div>
+                <h2>售前服务</h2>
+            </div>
+            <div>
+                <img class="fangda" v-for="n,k,i in a7" v-bind:src="[['../static/img/fuwu/shouqian-'+ n +'.png']]"/>
+            </div>
+        </div>
+        <div class="tubiaodiv col-xs-12, col-sm-12, col-md-4, col-lg-4">
+            <div>
+                <h2>售中服务</h2>
+            </div>
+            <div>
+                <img class="fangda" v-for="n,k,i in a8" v-bind:src="[['../static/img/fuwu/shouzhong-'+ n +'.png']]"/>
+            </div>
+
+        </div>
+        <div class="tubiaodiv col-xs-12, col-sm-12, col-md-4, col-lg-4">
+            <div>
+                <h2>售后服务</h2>
+            </div>
+            <div>
+                <img class="fangda" v-for="n,k,i in a7" v-bind:src="[['../static/img/fuwu/shouhou-'+ n +'.png']]"/>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p style="text-align: center;margin-top: 1em;margin-bottom: 1em;">
+            注:免费上门服务月每年5月针对所有铝木产品有问题的顾客,不限品牌,不限年限,均给提供免费上门、服务到家的贴心服务。
+        </p>
+    </div>
+
+
+    <div class="row">
+        <h2 l>售后服务与保障标准<br>全天候尊享服务</h2>
+
+        <p class="to-textcenter">省心、省力、更省时间的一站式售后服务</p>
+        <ul class="zunxiangfuwu" id="zunxiangfuwu">
+            <li class="fangda ding" style="" v-for="n,k,i in val">
+                <div style="color: #fff"><span style="color: #fff;font-size: 30px;">[[ n.t ]]</span>[[ n.p1 ]]</div>
+                <div style="color: #fff">[[ n.p2 ]]</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <h2>美驰尊享服务流程</h2>
+
+        <div class="zunxiangfuwu_tree">
+            <embed src="../static/img/fuwu/liuchengtu.svg" type="image/svg+xml"
+                   pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div style="float: left" class="weixin weixin_l col-xs-12, col-sm-12, col-md-6, col-lg-6">
+            <h2>整窗三年全面保障</h2>
+            <p>顾客所购买产品自安装之日起，三年内，正常使用情况下，整窗因工艺或安装出现的产品瑕疵，美驰将给予修理、更换或适当调整。同时美驰将承担由自身引起的修理、备用件、人工以及维修人员交通等费用。
+            </p>
+            <h2>终身满意维护</h2>
+            <p>
+                美驰一直坚持从用户角度出发，不断完善售后服务政策，向用户提供安心与便利的服务。美驰承诺，在客户使用美驰门窗期间，会根据由长时间使用、恶劣气候影响、使用不当等情况出现的任意问题，终身提供快速、专业的满意维护。
+            </p>
+            <h2>更多售后权益</h2>
+            <p>
+
+                美驰感谢每一位客户的认同与支持，并极其重视每一位终端客户的使用感受，您的任何
+                宝贵意见都将帮助美驰一路前行，为能持续提供优质产品及不断改善服务体验，每一位购买
+                美驰产品的尊贵客户，都可通过微信客户端进行产品注册，用于获得更多的售后服务权益。
+            </p>
+
+            <h2>微信注册流程</h2>
+
+            <ul id="weixin" style="text-align: center">
+                <li style="float: left; width: 25%; position: relative;" v-for="k,i in val">
+                    <img width="100%" v-bind:src="[[ '../static/img/fuwu/wixin-'+(i+1)+'.png' ]]">
+                    <p style="position: absolute; width: 75%;text-align: left;margin-left: 14%; margin-top: -100%; font-size: 14px; overflow: hidden;">
+                        [[ k ]]</p>
+                </li>
+            </ul>
+
+
+        </div>
+        <div style="float: right" class="weixin weixin-r col-xs-12, col-sm-12, col-md-6, col-lg-6">
+
+            <h2>重要部件全面担保</h2>
+
+            <p>
+                美驰深知“恬静生活”是每一个家庭幸福的重要因素，所以在产品正常使用情况下，对中空玻璃、密封胶条、五金、型材老化等出现的问题，进行专项长效质保。专项质保期间，美驰将依据售后政策对产品进行修理或是做适当调整。
+
+            </p>
+
+            <p>具体产品售后政策：</p>
+
+
+            <table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="64"><p align="center"><a name="OLE_LINK17"></a><a name="OLE_LINK16">产品</a></p></td>
+                    <td width="125"><p align="center">整体 <br>
+                        （含钢化玻璃） </p></td>
+                    <td width="95"><p align="center">中空玻璃 <br>
+                        （ 失效） </p></td>
+                    <td width="95"><p align="center">密封胶条 <br>
+                        （ 衰减 ） </p></td>
+                    <td width="95"><p align="center">五金件 <br>
+                        （开启） </p></td>
+                    <td width="95"><p align="center">型材 <br>
+                        （变形） </p></td>
+                </tr>
+                <tr>
+                    <td width="64"><p align="center">塑钢 <br>
+                        系列 </p></td>
+                    <td width="125"><p align="center">3  年<strong> </strong></p></td>
+                    <td width="95" rowspan="2"><p align="center">5  年<strong> </strong></p></td>
+                    <td width="95" rowspan="2"><p align="center">5  年 </p></td>
+                    <td width="95" rowspan="2"><p align="center">5  万次 </p></td>
+                    <td width="95" rowspan="2"><p align="center">5  年 </p></td>
+                </tr>
+                <tr>
+                    <td width="64"><p align="center">铝合金 <br>
+                        系列 </p></td>
+                    <td width="125"><p align="center">3  年<strong> </strong></p></td>
+                </tr>
+                <tr>
+                    <td width="64"><p align="center">木包铝 <br>
+                        系列 </p></td>
+                    <td width="125"><p align="center">5  年<strong> </strong></p></td>
+                    <td width="95"><p align="center">8  年<strong> </strong></p></td>
+                    <td width="95"><p align="center">8  年<strong> </strong></p></td>
+                    <td width="95"><p align="center">5  万次<strong> </strong></p></td>
+                    <td width="95"><p align="center">10  年<strong> </strong></p></td>
+                </tr>
+                <tr>
+                    <td width="64"><p align="center">铝包木 <br>
+                        系列<strong> </strong></p></td>
+                    <td width="125"><p align="center">5  年<strong> </strong></p></td>
+                    <td width="95"><p align="center">8  年<strong> </strong></p></td>
+                    <td width="95"><p align="center">8  年<strong> </strong></p></td>
+                    <td width="95"><p align="center">5  万次<strong> </strong></p></td>
+                    <td width="95"><p align="center">10  年<strong> </strong></p></td>
+                </tr>
+            </table>
+
+
+            <p>注 ：</p>
+            <p>1. 门窗整体3 年保障之外的专项保修政策，均需通过美驰微信公众平台注册后才能生效 。</p>
+            <p>
+                2. 玻璃属于易碎品，现场交付后成品保护义务即转移，表面划伤、破裂等无法明确认定为制造商责任时，美驰公司将收费维修更换。
+            </p>
+            <p>
+                3 . 产品在发生维修或更换服务后，原主材质保期不重新计算；
+            </p>
+            <p>
+                4. 非专业人员，不得拆改门窗五金系统 ，特别是扇合页的锁紧装置，否则引发的掉扇及可能引发的其它损伤，美驰公司不承担相应责任。
+            </p>
+            <p>
+                5. 客户自行更换门窗配件后，保修服务自动终止。
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<br><br>
+
+<div id="txt" style="display: none">{{ txt }}</div>
+{% endblock %}
+{% block js %}
+<script>
+    $(function () {
+
+        //var a7 = new Array(7).fill(0).map((v, i) => i + 1);
+        //var a8 = new Array(8).fill(0).map((v, i) => i + 1);
+        var a7 = [1, 2, 3, 4, 5, 6, 7];
+        var a8 = [1, 2, 3, 4, 5, 6, 7, 8];
+        var zunxiangfuwu_txt = [
+            {"t": "全", "p1": "天候", "p2": "风雨无阻"},
+            {"t": "4", "p1": "小时", "p2": "快速反应"},
+            {"t": "24", "p1": "小时", "p2": "上门维修"},
+            {"t": "专", "p1": "业", "p2": "解决更彻底"}
+        ];
+
+        var weixinliucheng_txt = [
+            '关注“美驰公众号”，在公众号对话框，输入“产品注册”',
+            '输入“产品注册”后，将出现“产品注册权益”的对话框，并点击进入',
+            '在注册页面，将出现产品信息注册登记，请依次填写表格中每项所需信息',
+            '填写完成后，点击确认后会出现，已成功提交产品注册信息'
+        ];
+
+        var tubiao = new Vue({
+            el: '#tubiao',
+            data: {
+                a7: a7,
+                a8: a8
+            },
+            delimiters: ['[[', ']]']
+
+        });
+
+        var zunxiangfuwu = new Vue({
+            el: '#zunxiangfuwu',
+            data: {
+                val: zunxiangfuwu_txt
+            },
+            delimiters: ['[[', ']]']
+
+        });
+
+        var weixin = new Vue({
+            el: '#weixin',
+            data: {
+                val: weixinliucheng_txt
+            },
+            delimiters: ['[[', ']]']
+        });
+
+
+
+
+        $(window).on("scroll", function () {
+            ding($(".ding"));
+            ding($("#weixin li"));
+        });
+
+
+    });
+</script>
+{% endblock %}

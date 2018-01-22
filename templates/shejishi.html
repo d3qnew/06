@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block css %}
+
+<style>
+    .col-xs-12, .col-sm-12, .col-md-6, .col-lg-6 {
+        float: left;
+    }
+
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        padding: 0;
+    !important;
+        margin: 0;
+    !important;
+    }
+
+    .img-l {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and (min-width: 992px) {
+        .shejishijianjie {
+            padding: 0 3%;
+            line-height:2em;
+        }
+
+        .duanwen {
+            margin-top: 4em;
+        }
+
+    }
+
+
+</style>
+
+
+{% endblock %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <img src="../static/img/shejishi/01.jpg" class="img-l"/>
+    </div>
+    <div class="row duanwen" style="text-align: center">
+
+        <h1>一扇窗成就顶级设计</h1>
+        <p style="max-width: 1200px;margin-left: auto;margin-right: auto; text-align: left;line-height: 2em;font-weight: 500;">
+            人的一生有2/3的时间是在室内度过的，高品质的室内设计可以为人们提供美观舒适，采光通风，环境优雅，杜绝噪音，保温隔热，防渗防潮，绿化美化的室内环境，而这些也都离不开对设计师对门窗的选择。美驰门窗凭借独有的品牌魅力、考究的生产工艺以及针对异型超高超大等特殊门窗的完美解决方案吸引了众多享誉国际的高级室内设计大师的目光。
+        </p>
+        <br><br>
+
+    </div>
+    <div class="row" id="shejishi-ls" v-cloak>
+        <ul class="breadcrumb" style="padding: 0 20px 10px 20px; border-radius: 4px !important; margin-bottom: 3em;">
+            <li><h3>合作设计师:</h3></li>
+            <li v-for="(n,k,i) in txt"><a v-bind:href="[[ '#ls'+k ]]" class="active"
+                                          style="font-size: 18px;font-weight:500" data-toggle="tab">[[ n['name'] ]]</a>
+            </li>
+        </ul>
+        <div class="tab-content ">
+            <div class="tab-pane fade in" v-for="n,k,i in txt" v-bind:id="[[ 'ls'+k ]]">
+                <div style="overflow: hidden; text-align: center;" class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                    <img v-bind:src="[[ '../static/img/shejishi/'+ n.pinyin + '.jpg' ]]"/>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 shejishijianjie">
+                    <h3>[[ n.name ]]</h3>
+                    <h4>设计师简介:</h4>
+                    <p style="line-height: 2em;">[[ n.jianjie ]]</p>
+                    <h4>[[ n['zuopin']['zp-name'] ]]</h4>
+                    <p>[[ n['zuopin']['zp-jj'] ]]</p>
+                </div>
+                <div style="overflow: hidden" class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                    <img v-bind:src="[[ '../static/img/shejishi/'+ n.pinyin + '-x.png' ]]"/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<br><br>
+
+<div id="txt" style="display: none">{{ txt }}</div>
+{% endblock %}
+{% block js %}
+
+
+<script>
+
+    $(function () {
+
+        var txt = eval($("#txt").text());
+
+        var shejishi = new Vue({
+            el: '#shejishi-ls',
+            data: {
+                txt: txt
+            },
+            delimiters: ['[[', ']]']
+
+        });
+
+        $("#shejishi-ls ul li:first").addClass("active");
+        $("#shejishi-ls div div:first").addClass("active");
+
+
+    });
+
+</script>
+
+
+{% endblock %}

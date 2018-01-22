@@ -26,17 +26,17 @@ def l_index():
 
     )
 
+
 @app.route('/xtest', methods=['GET', 'POST'])
 def xtest():
-     p = request.form['text']
-     print(p)
-     return render_template(
-         'xtest.html',
-         title='xtest',
-         year=datetime.now().year,
+    p = request.form['text']
+    print(p)
+    return render_template(
+        'xtest.html',
+        title='xtest',
+        year=datetime.now().year,
 
-     )
-
+    )
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -93,7 +93,8 @@ def story():
 
     )
 
-#新闻
+
+# 新闻
 @app.route('/news', methods=['GET', 'POST'])
 def news():
     newsls = []
@@ -112,7 +113,7 @@ def news():
             txt=txt['news'][int(id)]
         )
     else:
-         return render_template(
+        return render_template(
             'news.html',
             title='品牌动态',
             year=datetime.now().year,
@@ -120,16 +121,19 @@ def news():
 
         )
 
-#加入我们
+
+# 加入我们
 @app.route('/joinus')
 def joinus():
     return render_template(
         'joinus.html',
         title='joinus',
+        zhaopin = txt['joinus']['zhaopin'],
         year=datetime.now().year
     )
 
-#权威认证
+
+# 权威认证
 @app.route('/Certification')
 def certification():
     return render_template(
@@ -138,20 +142,97 @@ def certification():
         year=datetime.now().year
     )
 
-#经销商地图
+
+# 经销商地图
 @app.route('/agency')
 def agency():
     return render_template(
         'agency.html',
         title='agency',
+        year=datetime.now().year,
+        mapdate=txt['agency']
+    )
+
+
+# 保温
+@app.route('/baowen')
+def baowen():
+    return render_template(
+        'baowen.html',
+        title='baowen',
         year=datetime.now().year
     )
 
-@app.route('/showcity',methods=['POST'])
-def showcity():
-    p = request.form['ctname']
-    if p in txt['agency']:
-        rq = txt['agency'][p]
-    else:
-        rq = txt['agency']['北京市']
-    return str(rq)
+# 静音
+@app.route('/jingyin')
+def jingyin():
+    return render_template(
+        'jingyin.html',
+        title='jingyin',
+        year=datetime.now().year
+    )
+
+
+# 密封
+@app.route('/mifeng')
+def mifeng():
+    return render_template(
+        'mifeng.html',
+        title='mifeng',
+        year=datetime.now().year
+    )
+
+#售后
+@app.route('/fuwu')
+def shouhou():
+    return render_template(
+        'fuwu.html',
+        title='fuwu',
+        year=datetime.now().year
+    )
+
+#问题
+@app.route('/wenti')
+def wenti():
+    return render_template(
+        'wenti.html',
+        title='wenti',
+        year=datetime.now().year
+    )
+
+#极简生活
+@app.route('/jijianshenghuo')
+def jijianshenghuo():
+    return render_template(
+        'jijianshenghuo.html',
+        title='jijianshenghuo',
+        year=datetime.now().year
+    )
+
+#轻奢品质
+@app.route('/qingshepinzhi')
+def qingshepinzhi():
+    return render_template(
+        'qingshepinzhi.html',
+        title='qingshepinzhi',
+        year=datetime.now().year
+    )
+
+#传世至尊
+@app.route('/chuanshizhizun')
+def chuanshizhizun():
+    return render_template(
+        'chuanshizhizun.html',
+        title='chuanshizhizun',
+        year=datetime.now().year
+    )
+
+#传世至尊
+@app.route('/shejishi')
+def shejishi():
+    return render_template(
+        'shejishi.html',
+        title='shejishi',
+        txt=txt['shejishi'],
+        year=datetime.now().year
+    )

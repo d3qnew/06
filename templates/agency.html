@@ -1,31 +1,71 @@
 ﻿{% extends "layout.html" %}
 {% block css %}
 
-<style>
+<style type="text/css">
+
     #container {
         min-width: 600px;
-        min-height: 767px;
+        min-height: 680px;
     }
 
-    #city {
-        height: 30px;
-        display: none;
+    .mmserch {
+        float: left;
     }
+
+    .mmmap {
+        float: right;
+    }
+
+    .col-xs-12, .col-sm-12, .col-md-3, .col-lg-3 {
+        padding-left: 0;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+    }
+
+    .longselect {
+        min-height: 412px;
+        margin-bottom: 0px;
+    }
+
 </style>
 
 
 {% endblock %}
 {% block content %}
-<div class="container">
-    <div>
-        <input id="address" type="textbox" value="北京">
-        <button onclick="codeAddress()">查询</button>
-    </div>
+
+<div class="container" style="text-align: center">
+    <h2 class="page-title">经销商查询</h2>
+
 </div>
+<br>
+
 <div class="container">
 
-    <div style="width: 100%;" id="container"></div>
+    <div class="mmserch col-xs-12 col-sm-12 col-md-3 col-lg-3" id="mmserch">
+
+        <select class="form-control" v-model="slsheng">
+            <option value="" style="color: #ccc" disabled selected>省\直辖市</option>
+            <option v-for="n in sheng">[[ n ]]</option>
+
+        </select>
+        <select class="form-control" v-model="slshi">
+            <option value="" style="color: #ccc" disabled selected>城市</option>
+            <option v-for="n in showkey">[[ n ]]</option>
+
+        </select>
+        <select multiple class="form-control longselect" v-cloak>
+            <option v-for="n in showdian" v-on:click="tt(n['n'])">[[ n["t"] ]]</option>
+        </select>
+
+
+    </div>
+
+    <div class="mmmap col-xs-12 col-sm-12 col-md-9 col-lg-9" id="container"></div>
 </div>
+
+<br><br><br>
 
 {% endblock %}
 {% block js %}
@@ -33,72 +73,154 @@
 <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
 <script>
     var citylocation, map = null;
-    var center = new qq.maps.LatLng(39.916527, 116.397128);
+    var center = new qq.maps.LatLng(35.02628, 111.00699);
     map = new qq.maps.Map(document.getElementById('container'), {
         center: center,
-        zoom: 11
+        zoom: 5
     });
+
+    var p = [];
+    var bdata = zhuanma.htmlDecodeByRegExp("{{ mapdate }}");
+    bdata = $.parseJSON(bdata.replace(/'/g, '"'));
+    //console.log(data);
+    var infoWin = new qq.maps.InfoWindow({
+        map: map
+    });
+
+    var data = [];
+    var sheng = [];
+    var shi = [];
+
+    for (var m in bdata) {
+        sheng.push(m);
+        for (var l in bdata[m]) {
+            shi.push(l)
+            for (var k in bdata[m][l]) {
+
+                data.push(bdata[m][l][k]);
+            }
+
+        }
+    }
+
 
     //获取城市列表接口设置中心点
     citylocation = new qq.maps.CityService({
         complete: function (result) {
-            var ctname = result.detail.name;
-            //console.log(ctname);
-            map.setCenter(result.detail.latLng);
-            var infoWin = new qq.maps.InfoWindow({
-                map: map
-            });
-            $.post(
-                '/showcity',
-                {
-                    ctname: ctname
-                },
-                function (data) {
-                    var p = [];
-                    var data = eval(data);
-                    //console.log(data);
-                    for (var i in data) {
-                        //console.log(i);
-                        p[i] = new qq.maps.LatLng(data[i]['lat'], data[i]['lng']);
-                        (function (n) {             ///下面不能用i
-                            var marker = new qq.maps.Marker({    //标记
-                                position: p[n],
-                                map: map
-                            });
-                            qq.maps.event.addListener(marker, 'click', function () {   //点击标签
-                                infoWin.open();
-                                infoWin.setContent('<div style=" white-space:nowrap;margin:10px;">' +
-                                    zhenglibiaoqian(data[n]) + '</div>');
-                                infoWin.setPosition(p[n]);
-                            });
-                        })(i);
-                    }
-
-                });
-
-
+            reloadmap();
         }
     });
-    //调用searchLocalCity();方法    根据用户IP查询城市信息。
-    citylocation.searchLocalCity();
 
-    function codeAddress() {
-        var address = document.getElementById("address").value;
-        //通过getLocation();方法获取位置信息值
-        citylocation.searchCityByName(address);
+    citylocation.searchLocalCity();
+    //初始化
+    function reloadmap() {
+
+        for (var i in data) {
+            (function (n) {
+                p[n] = new qq.maps.LatLng(data[n]['lat'], data[n]['lng']);
+                var marker = new qq.maps.Marker({    //标记
+                    position: p[n],
+                    map: map
+                });
+                markerIcon = new qq.maps.MarkerImage("../static/img/logo.png");
+                marker.setIcon(markerIcon);
+
+                qq.maps.event.addListener(marker, 'click', function () {   //点击标签
+                    p[n] = new qq.maps.LatLng(data[n]['lat'], data[n]['lng']);
+                    infoWin.open();
+                    infoWin.setContent('<div style=" white-space:nowrap;margin:10px;">' + zhenglibiaoqian(data[n]) + '</div>');
+                    infoWin.setPosition(p[n]);
+                });
+            })(i);
+        }
+    }
+
+
+    //调用searchLocalCity();方法    根据用户IP查询城市信息。
+    //citylocation.searchLocalCity();
+
+    //    function codeAddress() {
+    //        var address = document.getElementById("address").value;
+    //        //通过getLocation();方法获取位置信息值
+    //        citylocation.searchCityByName(address);
+    //    }
+
+
+    function tx() {
+        alert('ok');
     }
 
 
     function zhenglibiaoqian(arr) {
         var res = '';
-        var tt = ["title", "tel", "contacts", "adders"];
-        for (var i in tt) {
-            if (typeof(arr[tt[i]]) == 'string' && arr[tt[i]] != '') {
-                res += '<p>' + arr[tt[i]] + '</p>';
+        var tt = ["title","adders"];
+        for (var x in tt) {
+            if (arr[tt[x]] && typeof(arr[tt[x]]) == 'string' && arr[tt[x]] != '') {
+                res += '<p>' + arr[tt[x]] + '</p>';
             }
         }
         return (res);
     }
+
+
+    var vm = new Vue({
+        el: '#mmserch',
+        data: {
+            sheng: sheng,
+            shi: shi,
+            bdata: bdata,
+            slsheng: '',
+            slshi: ''
+        },
+        computed: {
+            showkey: function () {
+                var s = [];
+                for (var i in this.bdata[this.slsheng]) {
+                    s.push(i);
+                }
+                return (s);
+            },
+            showdian: function () {
+                var s = [];
+                if (this.slshi != '') {
+                    for (var i in this.bdata[this.slsheng][this.slshi]) {
+                        s[i] = {};
+                        s[i]['t'] = this.bdata[this.slsheng][this.slshi][i]["title"];
+                        s[i]['n'] = i;
+                    }
+                    return (s);
+                } else {
+                    return ([]);
+                }
+            },
+
+
+        },
+
+        methods: {
+
+            tt: function (n) {
+
+                var wwr = bdata[this.slsheng][this.slshi][n];
+                p = new qq.maps.LatLng(wwr['lat'], wwr['lng'])
+                infoWin.open();
+                infoWin.setContent('<div style=" white-space:nowrap;margin:10px;">' + zhenglibiaoqian(wwr) + '</div>');
+                infoWin.setPosition(p);
+
+            }
+
+        },
+
+        delimiters: ['[[', ']]']
+
+    });
+
+    $(function () {
+        $(".csssprite").on("click", function () {
+            alet('ok');
+        });
+
+    })
 
 
 </script>

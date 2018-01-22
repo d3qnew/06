@@ -1,0 +1,254 @@
+{% extends "layout.html" %}
+{% block css %}
+
+<style>
+    .col-xs-12, .col-sm-12, .col-md-6, .col-lg-6 {
+        float: left;
+    }
+
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        padding: 0;
+    !important;
+        margin: 0;
+    !important;
+    }
+
+    .img-l {
+        width: 100%;
+        height: 100%;
+    }
+    .danyuan{
+        position: relative;
+    }
+    .danyuan p{
+        line-height: 2em;
+    }
+
+    .baowen-bq {
+        position: absolute;
+        text-align: left;
+        top:5%;
+    }
+
+    .baowen-ditu-ul {
+        margin-left: -4em;
+    }
+
+    .baowen-ditu-ul li {
+        margin-left: 1em;
+    }
+
+    .baowen-tb {
+        width: 220px;
+        height: 80px;
+        border: 2px #999 solid;
+    }
+
+    .baowen-tb td {
+        text-align: center;
+        line-height: 18px;
+    }
+
+    @media screen and (min-width: 992px){
+        .danyuan {
+            width: 100%;
+            height: 888px;
+            overflow: hidden;
+        }
+
+        .wenben {
+            float: right;
+            margin-top: -888px;
+        }
+    }
+
+
+</style>
+
+
+{% endblock %}
+{% block content %}
+<div class="danyuan" style="background-color: #d8d8d8; text-align: center">
+    <img src="../static/img/xitong/baowen/01.jpg"/>
+    <div class="container">
+        <div class="row">
+
+                <div class="baowen-bq">
+                    <h1 style="margin-bottom: 30px;">保温系统</h1>
+                    <span>自动调节,更加舒适</span><br>
+                    <img src="../static/img/xitong/baowen/00.png" style="width: 80px ;height: 80px;margin-top: 20px;"/>
+                </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<div class="danyuan" style="background-color: #efefef;padding-bottom: 3em;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img src="../static/img/xitong/baowen/02.jpg"/>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div style="padding-top: 5em">
+                    <p>
+                        门窗是整个建筑围护结构中最薄弱的环节 ，而我国大部分属于温带气候，
+                        地形复杂，四季分明，南北方气候存在很大差异。美驰门窗认为一扇好窗，最基本的要求是在能适应各种外部环境，且能够保证居住环境温度适宜。应国家号召建筑节能65%的要求，目前北京市规定的门窗保温性能最低标准为K值≤2.0W/(㎡•K)，美驰所有产品的保温性能均能达到国标较高等级。其中EX105木包铝门窗以及M130铝包木门窗的传热系数能够≤0.8W/(㎡•K)，通过了国际被动窗认证。
+                    </p>
+                </div>
+                <div style="margin-top: 12% ; text-align: center">
+                    <h3 style="text-align: center">中国建筑热工设计分区图</h3>
+                    <div style="text-align: center">
+
+                        <ul class="baowen-ditu-ul">
+                            <li style="display: inline-block">
+                                <span style="font-size: 60px;color: #0000c8;line-height: 40px;height: 40px;overflow: hidden;float: left;">●</span>
+                                <span style="line-height: 46px; display: inline-block; height: 46px;">严寒地区</span>
+                            </li>
+                            <li style="display: inline-block">
+                                <span style="font-size: 60px;color: #0280fb;line-height: 40px;height: 40px;overflow: hidden;float: left;">●</span>
+                                <span style="line-height: 46px; display: inline-block; height: 46px;">寒冷地区</span>
+                            </li>
+                            <li style="display: inline-block">
+                                <span style="font-size: 60px;color: #7ffc00;line-height: 40px;height: 40px;overflow: hidden;float: left;">●</span>
+                                <span style="line-height: 46px; display: inline-block; height: 46px;">夏热冬冷地区</span>
+                            </li>
+                            <li style="display: inline-block">
+                                <span style="font-size: 60px;color: #f8fb94;line-height: 40px;height: 40px;overflow: hidden;float: left;">●</span>
+                                <span style="line-height: 46px; display: inline-block; height: 46px;">温和地区</span>
+                            </li>
+                            <li style="display: inline-block">
+                                <span style="font-size: 60px;color: #f30504;line-height: 40px;height: 40px;overflow: hidden;float: left;">●</span>
+                                <span style="line-height: 46px; display: inline-block; height: 46px;">夏热冬暖地区</span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <img src="../static/img/xitong/baowen/03.jpg"/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #d8d8d8;padding-bottom: 5em;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div style="padding-top: 5em;">
+
+                    <h3>美国超级中空玻璃+ Super Spacer间隔条</h3>
+                    <p>美驰门窗联手国外领先技术研发的超级中空玻璃配合Super
+                        Spacer间隔条。结构稳定严密，有效防止室内外空气流动，维持室内恒定温度，通过了最严酷的美国行业标准测试，能够降低门窗U值，节省能源消耗。</p>
+                    <h3>中空层填充氩气</h3>
+                    <p>中空层填充氩气，可以有效的避免热传递。</p>
+                    <h3>low-e镀膜</h3>
+                    <p>镀膜层具有对可见光高透过及对中远红外线高反射的特性，
+                        使其与普通玻璃相比，具有优异的隔热效果。
+                        冬季保证室内恒定温度，夏季可阻止室外热辐射进入室内，
+                        从而使室内温度始终保持舒适宜人。</p>
+
+                </div>
+
+                <div>
+
+
+                    <img style="height:80px;width:220px;margin-bottom: 5px"
+                         src="../static/img/xitong/baowen/16.png"/><br>
+                    <img style="height:80px;width:220px;margin-bottom: 5px"
+                         src="../static/img/xitong/baowen/17.png"/><br>
+                    <img style="height:80px;width:220px;" src="../static/img/xitong/baowen/18.png"/>
+
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+                <img src="../static/img/xitong/baowen/04.jpg"/>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="danyuan" style="background-color: #efefef">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+                <img src="../static/img/xitong/baowen/05.jpg"/>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div style="padding-top: 5em">
+                    <h3>多腔隔热技术+德国Ensiger（恩欣格）隔热条</h3>
+                    <p>采用业内领先多腔隔热技术，有效保证室内温度。
+                        配合德国Ensiger（恩欣格）隔热条，高效率的热分离技术能够削减能源的损耗和冬季暖气费用。
+                        其涂层附有高反射的低辐射low-e薄膜，有效降低热损耗。</p>
+                    <h3>分子筛</h3>
+                    <p>吸附中空玻璃内腔中的水分，降低露点，防止玻璃结雾从而达到保温节能的效果。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="danyuan" style="background-color: #d8d8d8;padding-bottom: 5em;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div style="padding-top: 5em;">
+                    <h3>全球优质橡木+精制级铝合金型材</h3>
+                    <p>
+                        美驰门窗甄选全球优质橡木，导热系数低，是热的不良导体。采用6063-T5精制级铝合金型材，利用传热系数极低的尼龙连接件连接木材与铝型材，使型材的内外侧之间形成有效断热层，通过门窗型材散失热量的途径被阻断，达到保温节能之目的。</p>
+                </div>
+                <div>
+                    <p>优质木材的导热系数为0.13W/m².k</p>
+
+                    <div style="border: 2px #999 solid; width: 256px;height: 208px;padding: 0 20px;">
+                        <div style="float: left;line-height: 208px"><img style="width: 78px;height: 88px;"
+                                                                         src="../static/img/xitong/baowen/bdbarrows.png"/>
+                        </div>
+                        <div style="width: 20px;float: left;margin-left: 20px;"><img style="width: 20px;height: 204px;"
+                                                                                     src="../static/img/xitong/baowen/wood.png"/>
+                        </div>
+                        <div>
+                            <h2 style="float: right">夏季</h2>
+                            <img style="width: 78px;height: 88px;margin-left: 14px;"
+                                 src="../static/img/xitong/baowen/ydbarrows.png"/>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div style="border: 2px #999 solid; width: 256px;height: 208px;padding: 0 20px;">
+                        <div style="float: left;line-height: 208px"><img style="width: 78px;height: 88px;"
+                                                                         src="../static/img/xitong/baowen/bdbarrows.png"/>
+                        </div>
+                        <div style="width: 20px;float: left;margin-left: 20px;"><img style="width: 20px;height: 204px;"
+                                                                                     src="../static/img/xitong/baowen/wood.png"/>
+                        </div>
+                        <div>
+                            <h2 style="float: right">冬季</h2>
+                            <img style="width: 78px;height: 88px;margin-left: 14px;"
+                                 src="../static/img/xitong/baowen/ydbarrows.png"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img src="../static/img/xitong/baowen/06.jpg"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

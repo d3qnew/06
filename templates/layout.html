@@ -22,23 +22,14 @@
 </head>
 <body>
 <div  id="toplink"></div>
-<div style="    position: fixed;
-    clear: both;
-    min-width: 480px;
-    width: 100%;
-    z-index: 999;
-    background-color: #fff;top:0px">
-
-
+<div style="position: fixed;clear: both; min-width: 480px; width: 100%; z-index: 999; background-color: #fff;top:0px;box-shadow:0px 0px 20px #333;">
     <div class="index-top">
         <div class="container">
             <span>全国服务热线：400-081-3338</span>
-            <a href="/xtest">T</a>
-            <span style="float: right">免费上门设计</span>
+            <a style="color: #e71f19 " href="/xtest">O</a>
+            <span id="mianfeisheji-layout" style="float: right">免费上门设计</span>
         </div>
     </div>
-
-
     <div class="container tostatic topadding0">
         <nav class="navbar navbar-default tostatic tonoborder" role="navigation">
             <div class=" tostatic">
@@ -59,7 +50,7 @@
 
                     <ul class="nav navbar-nav tostatic ">
                         <li class="dropdown tostatic">
-                            <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                            <a href="#" class="dropdown-toggle navbaropen  "
                                data-toggle="dropdown">品牌天地</a>
                             <ul class="dropdown-menu maxwidth totopauto">
                                 <div class="container tonavmenuls">
@@ -76,14 +67,14 @@
 
                     <ul class="nav navbar-nav tostatic ">
                         <li class="dropdown tostatic">
-                            <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                            <a href="#" class="dropdown-toggle navbaropen  "
                                data-toggle="dropdown">产品案例</a>
                             <ul class=" dropdown-menu maxwidth totopauto">
                                 <div class="container tonavmenuls">
                                     <div class="navbar-top-line"></div>
-                                    <li><a href="#">极简生活</a></li>
-                                    <li><a href="#">轻奢品质</a></li>
-                                    <li><a href="#">传世至尊</a></li>
+                                    <li><a href="/jijianshenghuo">极简生活</a></li>
+                                    <li><a href="/qingshepinzhi">轻奢品质</a></li>
+                                    <li><a href="/chuanshizhizun">传世至尊</a></li>
                                 </div>
                             </ul>
                         </li>
@@ -91,15 +82,14 @@
 
                     <ul class="nav navbar-nav tostatic ">
                         <li class="dropdown tostatic">
-                            <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                            <a href="#" class="dropdown-toggle navbaropen  "
                                data-toggle="dropdown">服务中心</a>
                             <ul class=" dropdown-menu maxwidth totopauto">
                                 <div class="container tonavmenuls">
                                     <div class="navbar-top-line"></div>
-                                    <li><a href="#">如何选购</a></li>
-                                    <li><a href="#">常见问题</a></li>
-                                    <li><a href="#">售后服务</a></li>
-                                    <li><a href="#">意见反馈</a></li>
+
+                                    <li><a href="/wenti">常见问题</a></li>
+                                    <li><a href="/fuwu">服务体系</a></li>
                                     <li><a href="/agency">查找零售店</a></li>
                                 </div>
                             </ul>
@@ -109,14 +99,14 @@
 
                     <ul class="nav navbar-nav tostatic ">
                         <li class="dropdown tostatic">
-                            <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                            <a href="#" class="dropdown-toggle navbaropen  "
                                data-toggle="dropdown">美驰窗系统</a>
                             <ul class=" dropdown-menu maxwidth totopauto">
                                 <div class="container tonavmenuls">
                                     <div class="navbar-top-line"></div>
-                                    <li><a href="#">保温系统</a></li>
-                                    <li><a href="#">静音系统</a></li>
-                                    <li><a href="#">密封系统</a></li>
+                                    <li><a href="/baowen">保温系统</a></li>
+                                    <li><a href="/jingyin">静音系统</a></li>
+                                    <li><a href="/mifeng">密封系统</a></li>
                                 </div>
                             </ul>
                         </li>
@@ -124,7 +114,7 @@
 
                     <ul class="nav navbar-nav tostatic ">
                         <li class="dropdown tostatic">
-                            <a href="#" class="dropdown-toggle navbaropen  tolineheight60"
+                            <a href="#" class="dropdown-toggle navbaropen  "
                                data-toggle="dropdown">产品中心</a>
                             <ul class=" dropdown-menu maxwidth totopauto">
                                 <div class="container tonavmenuls">
@@ -144,12 +134,21 @@
                     </ul>
 
 
+                    <ul class="nav navbar-nav tostatic ">
+                        <li class="dropdown tostatic">
+                            <a href="/" class="dropdown-toggle  ">首页</a>
+
+                        </li>
+                    </ul>
+
+
+
+
                 </div>
             </div>
         </nav>
     </div>
 </div>
-
 <div class="cebianlan">
     <ul>
         <li><a href="#"><img src="../static/img/service.png"/></a></li>
@@ -159,14 +158,9 @@
 
     </ul>
 </div>
-
-
 <div style="margin-top: 126px"></div>
-
 {% block content %}
 {% endblock %}
-
-
 <div class="container-fluid main-floor">
     <div class="container">
         <ul class=" col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
@@ -192,7 +186,6 @@
                     <li>品牌动态</li>
                     <li>世界权威认证</li>
                     <li>加入我们</li>
-
                 </ul>
             </li>
         </ul>
@@ -204,7 +197,7 @@
                     <li>成为合作伙伴</li>
                     <li>渠道商加盟</li>
                     <li>开发商采购</li>
-                    <li>设计师合作</li>
+                    <li><a href="/shejishi">设计师合作</a></li>
                 </ul>
             </li>
         </ul>
@@ -237,7 +230,7 @@
                     <li>保温系统</li>
                     <li>静音系统</li>
                     <li>密封系统</li>
-                    <li><img style="width: 64px;" src="../static/img/qr.png"></li>
+
                 </ul>
 
             </li>
@@ -245,11 +238,9 @@
     </div>
 
 </div>
-
 <div style="color:#fff;text-align:center;border-top: 1px #0fff solid; height: 48px;line-height: 48px;background-color:#e71f19 ">
     &copy; {{ year }} - 美驰集团 京icp05058264号
 </div>
-
 <script src="../static/js/lib/jquery-3.2.1.js"></script>
 <script src="../static/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 <script src="../static/js/myjs/layout.js"></script>
@@ -259,12 +250,7 @@
 <script src="../static/js/lib/lazysizes.min.js"></script>
 <script src="../static/js/lib/vue.js"></script>
 <script src="../static/js/myjs/zhuanma.js"></script>
-
-
 {% block js %}
-
 {% endblock %}
-
-
 </body>
 </html>

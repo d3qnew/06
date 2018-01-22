@@ -2,7 +2,62 @@
 
 
 {% block css %}
+
 <style>
+
+    @media screen and (max-width: 969px) {
+        .news_h {
+
+            font-size: 22px;
+            font-family: 微软雅黑;
+            text-align: center;
+        }
+
+    }
+
+    .news_li {
+        margin-top: 50px;
+    }
+
+    .news_time {
+        color: #777777;
+        font-size: 14px;
+        font-family: Verdana;
+
+    }
+
+    .news_div {
+
+        display: block;
+        float: right;
+    }
+
+    .news_p {
+        text-indent: 2em;
+
+        font-size: 18px;
+        font-family: 微软雅黑；
+    }
+
+    .news_h {
+
+        font-size: 22px;
+        font-family: 微软雅黑;
+        text-align: left;
+    }
+
+    .news_a {
+        float: right;
+
+    }
+
+    .news_img {
+        float: left;
+        width: 100%;
+        margin-bottom: 50px;
+
+    }
+
     .news_next {
         color: #e71f19;
         border: 2px solid;
@@ -12,36 +67,56 @@
 </style>
 {% endblock %}
 {% block content %}
+
+
 <div class="container" id="newsmain">
-    <ol>
-        <li style="position: static; clear: both;" v-for="n in news">
-            <img style="float: left;" v-bind:src="[[ n.img[0] ]]">
-            <div style="display: block;">
-                <p>[[ n.title ]]</p>
-                <p v-for="p in n.zhengwen"> [[ p ]] </p>
+
+
+    <ul v-cloak>
+        <li class="row news_li" v-for="n in news">
+            <div class="col-md-6 col-lg-5 ">
+                <img style="float: left;" v-bind:src="[[ n.img[0] ]]" class="news_img">
             </div>
-            <a class="news_next" v-bind:href="[[ '/news?id='+n.id ]] ">查看详细</a>
-            <div style="clear: both;text-align: center; ">[[ n.year ]]，[[ n.adders ]]</div>
+            <div class="col-md-6 col-lg-7 news_div">
+                <div class="news_h">
+                    <p>[[ n.title ]]</p>
+                </div>
+                <div class="news_p">
+                    <p>[[ n.zhengwen[0] ]] </p>
+                </div>
+                <div>
+                    <a class="news_next news_a" v-bind:href="[[ '/news?id='+n.id ]] ">查看详细</a>
+                </div>
+                <div class="news_time"><span class="glyphicon glyphicon-time" style="color:#777777"></span>&nbsp;&nbsp;[[
+                    n.year ]]，[[ n.adders ]]
+                </div>
+            </div>
         </li>
-    </ol>
+    </ul>
 </div>
+
+<p id="rq-txt" style="display: none">{{txt}}</p>
 
 {% endblock %}
 {% block js %}
 <script>
 
-    var txt = zhuanma.htmlDecodeByRegExp("{{txt}}");
-    txt = $.parseJSON(txt.replace(/'/g, '"'));
-    for (var i in txt){
-        txt[i].year = formatdaste(txt.year);
-    }
+    $(function () {
+        var txt = $("#rq-txt").text();
+        txt = eval(txt);
 
-    var vm = new Vue({
-        el: '#newsmain',
-        data: {
-            news: txt
-        },
-        delimiters: ['[[', ']]']
+        for (var i in txt) {
+            txt[i].year = formatdaste(txt.year);
+        }
+
+        var vm = new Vue({
+            el: '#newsmain',
+            data: {
+                news: txt
+            },
+            delimiters: ['[[', ']]']
+
+        });
 
     });
 
