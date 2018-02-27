@@ -10,8 +10,77 @@
         width: 100%;
     }
 
-    .container{
-        padding-bottom: 1em;
+    .c2 {
+        min-width: 260px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 5px 25px 0px rgba(64, 64, 64, 0.3);
+        z-index: -1;
+    }
+
+    .c2bg div {
+        width: 16.6666%;
+        float: right;
+        display: none;
+    }
+
+    .c2bg img {
+        width: 100%;
+        float: left;
+    }
+
+    .c2val img {
+        width: 100%;
+        height: 100%;
+        float: left;
+    }
+
+
+
+    .c2d {
+        margin-top: -4em;
+        text-align: center;
+        vertical-align: top;
+        overflow: hidden;
+    }
+
+    .c2u {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    .c2u li {
+        margin: 0px 15px;
+        display: inline-block;
+        font-size: 48px;
+        line-height: 12px;
+        color: #ccc;
+        margin: 0 8px;
+        list-style: none;
+    }
+
+    .c2u a {
+        display: block;
+        width: 36px;
+        height: 12px;
+        background-color: #fff;
+        padding: 0px;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    .c2u li a:hover {
+        background-color: #f00;
+        cursor: pointer;
+    }
+
+    .c2tt span {
+        display: block;
+        margin: 12px 0 12px 24px;
+        font-size: 18px;
+        letter-spacing: 1px
     }
 
     @media (min-width: 992px) {
@@ -30,9 +99,46 @@
 
 {% block content %}
 <div class="container">
+    <div class="box">
+        <div class="c c2">
+
+            <div class="c2val">
+                <div id="c2val1" class="c2valdiv" style="display: block;">
+                    <img src="../static/img/joinus/1.png"/>
+
+                </div>
+                <div id="c2val2" class="c2valdiv" style="display: none;">
+                    <img src="../static/img/joinus/2.png"/>
+
+                </div>
+                <div id="c2val3" class="c2valdiv" style="display:none;">
+                    <img src="../static/img/joinus/3.png"/>
+
+                </div>
+                <div id="c2val4" class="c2valdiv" style="display:none;">
+                    <img src="../static/img/joinus/4.png"/>
+
+                </div>
+                <div id="c2val5" class="c2valdiv" style="display:none;">
+                    <img src="../static/img/joinus/5.png"/>
+
+                </div>
+            </div>
+
+        </div>
 
 
-    <img src="../static/img/joinus/joinus-01.png"/>
+        <div class="c c2d">
+            <ul class="c2u">
+                <li id="cb1"><a></a></li>
+                <li id="cb2"><a></a></li>
+                <li id="cb3"><a></a></li>
+                <li id="cb4"><a></a></li>
+                <li id="cb5"><a></a></li>
+            </ul>
+        </div>
+
+    </div>
 </div>
 <br>
 <div class="container">
@@ -65,9 +171,8 @@
 </div>
 <div class="container">
     <h1 style="text-align: center">培训发展</h1>
-    <p>企业发展的核心竞争力是持续学习的能力</p>
     <p>
-        对人才的需求和培养，始终是公司赖以生存并高速发展的有力保障。公司为每位员工提供了清晰、科学和持续的培养方案，从入职学习、在岗培训到晋升辅导，根据不同的成长阶段，不同的发展方向，分别配有不同的学习课程，诸如新员工入职训练、管理技能培训、技术研发培训等。唯有专业才能创造独特价值，相信在美驰的引导下，我们将迈着稳健、务实的步伐不断前进
+        企业发展的核心竞争力是持续学习的能力,对人才的需求和培养，始终是公司赖以生存并高速发展的有力保障。公司为每位员工提供了清晰、科学和持续的培养方案，从入职学习、在岗培训到晋升辅导，根据不同的成长阶段，不同的发展方向，分别配有不同的学习课程，诸如新员工入职训练、管理技能培训、技术研发培训等。唯有专业才能创造独特价值，相信在美驰的引导下，我们将迈着稳健、务实的步伐不断前进。
     </p>
 </div>
 
@@ -85,12 +190,13 @@
 <br>
 <div class="container">
     <h1 style="text-align: center">招聘职位</h1>
-<br>
+    <br>
     <div class="panel-group" id="accordion">
         <div class="panel panel-default" v-for="(n,i,j) in p">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a style="width: 100%;display: block" data-toggle="collapse" data-parent="#accordion" v-bind:href="[['#c'+j]]">
+                    <a style="width: 100%;display: block" data-toggle="collapse" data-parent="#accordion"
+                       v-bind:href="[['#c'+j]]">
                         [[ i ]]
                     </a>
                 </h4>
@@ -99,11 +205,15 @@
                 <div class="panel-body">
                     <h4>岗位职责</h4>
                     <ul>
-                        <li style="list-style-type: decimal !important; margin-left: 30px !important;" v-for="x in n['岗位职责']">[[ x ]]</li>
+                        <li style="list-style-type: decimal !important; margin-left: 30px !important;"
+                            v-for="x in n['岗位职责']">[[ x ]]
+                        </li>
                     </ul>
                     <h4>任职要求</h4>
                     <ul>
-                        <li  style="list-style-type: decimal !important; margin-left: 30px !important;" v-for="x in n['任职要求']">[[ x ]]</li>
+                        <li style="list-style-type: decimal !important; margin-left: 30px !important;"
+                            v-for="x in n['任职要求']">[[ x ]]
+                        </li>
                     </ul>
                     <h4>工作地点</h4>
                     <ul>
@@ -114,26 +224,27 @@
         </div>
     </div>
 
-    <h4>联系方式: Email: hr@mylch.com  Tel:010-80496962</h4>
+    <h4>联系方式: Email: hr@mylch.com Tel:010-80496962</h4>
 </div>
 
 <br>
 <div class="container">
 
     <h1 style="text-align: center">携手同行，共创未来</h1><br>
-    <p>作为国内成立最早的高档门窗企业之一，美驰公司坚持“员工是公司最宝贵财富”的理念，为员工构建了完善的人才培养的发展体系，逐渐形成了从吸引人才.培养人才，再到全面强化人才综合实力的科学化管理之路。在美驰，除了完善的培训机制，员工还能够感受到温暖的企业关怀，分享成长的经验。这里是成长的阶梯，这里是温暖的家园，多姿多彩的美驰，期待与您携手创建美好的未来。</p>
+    <p>
+        作为国内成立最早的高档门窗企业之一，美驰公司坚持“员工是公司最宝贵财富”的理念，为员工构建了完善的人才培养的发展体系，逐渐形成了从吸引人才、培养人才，再到全面强化人才综合实力的科学化管理之路。在美驰，除了完善的培训机制，员工还能够感受到温暖的企业关怀，分享成长的经验。这里是成长的阶梯，这里是温暖的家园，多姿多彩的美驰，期待与您携手创建美好的未来。</p>
 
 </div>
 
-
+<span id="txt" style="display: none">{{ zhaopin }}</span>
 {% endblock %}
 
 
 {% block js %}
 
 <script>
-    var zhaopin = zhuanma.htmlDecodeByRegExp("{{ zhaopin }}");
-    zhaopin = $.parseJSON(zhaopin.replace(/'/g, '"'));
+    var zhaopin = $("#txt").text();
+    zhaopin = $.parseJSON(zhaopin);
 
     var vm = new Vue({
         el: '#accordion',
@@ -143,6 +254,103 @@
         delimiters: ['[[', ']]']
 
     });
+
+
+    c2mov();//轮播开始
+
+
+    $(".c2u li").click(function () {
+
+        $(this).attr('disabled', "disabled");
+        var lic = $(this).index() + 1;
+        var valc = $(".c2valdiv:visible").index() + 1;
+
+
+        var c2bg = "#c2bg";
+        var c2val = "#c2val";
+        var c2t = "#c2t";
+
+        $(".c2u a").css("background-color", "#fff");
+        $(this).children("a").css("background-color", "#f00");
+
+        for (i = 1; i <= 6; i++) {
+
+            var c2 = c2bg + i;
+            $(c2).fadeOut(200 * (i - 7) * -1);
+            $(".c2val").children("div").hide();
+
+        }
+
+        $(c2val + lic).fadeIn(
+            1300,
+            function () {
+                $(c2t + lic).animate({marginLeft: ($(".c2").width() * 0.69) + "px", opacity: 0.4}, 600);
+                $(c2t + lic).animate({opacity: 0.85}, 500);
+            });
+        $(c2t + lic).css("opacity", "0");
+
+
+    });
+
+
+    function c2mov() {
+        var showtime = 15000;// 轮播间隔
+        if ($(window).width() >= 650) {
+            var lic = 2;
+            var imgrun = setInterval(function () {
+                //$(".c2t").css({"margin-top": $(".c2").height() * -0.9, "margin-left": $(".c2").width()});
+                var valc = $(".c2valdiv:visible").index() + 1;
+                var c2bg = "#c2bg";
+                var c2val = "#c2val";
+                var c2t = "#c2t";
+                var cb = "#cb"
+                $(".c2u li").css("color", "#ccc");
+                $(cb + lic).css("color", "#349bd7");
+                $(".c2bg div").show();
+                if (1 < lic) {
+                    $(".c2bg div").css("float", "right");
+                } else {
+                    $(".c2bg div").css("float", "left");
+                }
+                for (i = 1; i <= 6; i++) {
+                    var c2 = c2bg + i;
+                    $(c2).fadeOut(200 * (i - 7) * -1);
+                    $(".c2val").children("div").hide();
+                }
+                $(c2val + lic).fadeIn(
+                    1300,
+                    function () {
+                        var lic1 = lic - 1;
+                        if (lic1 == 0) lic1 = 4;
+                        $(c2t + lic1).animate({marginLeft: ($(".c2").width() * 0.69) + "px", opacity: 0.4}, 600);
+                        $(c2t + lic1).animate({opacity: 0.85}, 500);
+                    });
+                $(c2t + lic).css("opacity", "0");
+                lic++;
+                if (lic > 4) lic = 1;
+            }, showtime);
+        } else {
+            var lic = 2;
+            var imgrun = setInterval(function () {
+                var valc = $(".c2valdiv:visible").index() + 1;
+                var c2bg = "#c2bg";
+                var c2val = "#c2val";
+                var c2t = "#c2t";
+                var cb = "#cb";
+                $(".c2val").children("div").hide();
+                $(c2val + lic).fadeIn(
+                    100,
+                    function () {
+                        var lic1 = lic - 1;
+                        if (lic1 == 0) lic1 = 4;
+                        $(c2t + lic1).animate({opacity: 0.85}, 500);
+                    });
+                $(c2t + lic).css("opacity", "0");
+                lic++;
+                if (lic > 4) lic = 1;
+            }, showtime);
+        }
+    }
 
 
 </script>

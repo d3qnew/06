@@ -34,7 +34,7 @@ ul, li {
 body {
 
     font-weight: 300;
-    min-width: 480px !important;
+    min-width: 390px !important;
 
     font-family: Arial, Roboto, Helvetica Neue, Helvetica, sans-serif;
     font-size: 16px;
@@ -42,8 +42,14 @@ body {
 
 }
 
-p {
 
+
+.layout-bottom{
+    padding-top: 1em;
+}
+
+.layout-bottom p{
+    color: #fff!important;
 }
 
 .row {
@@ -286,15 +292,13 @@ a {
 }
 
 a:hover, a:focus {
-    color: #e71f19 !important;
+    color: #b20002 ;
 
 }
 
 .index-top {
     background-color: #e71f19;
     width: 100%;
-    height: 40px;
-    line-height: 40px;
     color: #fff;
 }
 
@@ -310,7 +314,7 @@ a:hover, a:focus {
 }
 
 .main-floor * {
-    color: #fff !important;
+    color: #fff;
 
 }
 
@@ -319,19 +323,21 @@ a:hover, a:focus {
     float: left;
 }
 
-.main-floor-ul li {
-
+.main-floor-ul span {
+    font-weight: 600;
+}
+.main-floor-ul a:hover{
+    color: #a30700;
 }
 
 .cebianlan {
     position: fixed;
     float: right;
     right: 0px;
-    height: 202px;
-
     top: 35%;
     z-index: 998;
     display: none;
+
 }
 
 .cebianlan a {
@@ -347,6 +353,27 @@ a:hover, a:focus {
     width: 32px;
     height: 32px;
 }
+
+.cebianlan-kuozhan{
+    background-color: #b20002;
+    color: #fff;
+    position:fixed;
+    display: none;
+    right: 56px;
+    padding: 15px;
+    width: 224px;
+    height:224px;
+    top:35%;
+    z-index: 9;
+    text-align: center;
+}
+.cebianlan-kuozhan p{
+    color: #fff;
+    font-weight: 500;
+
+
+}
+
 
 @media (min-width: 992px) {
     .cebianlan {
@@ -364,4 +391,31 @@ a:hover, a:focus {
     box-shadow: 0px 5px 25px 0px rgba(64, 64, 64, 0.3);
     transform: scale(1.08);
     transition: transform 0.3s
+}
+
+/*水平翻转*/
+.flipx {
+    -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+    /*IE*/
+    filter:FlipH;
+}
+
+/*垂直翻转*/
+.flipy {
+    -moz-transform:scaleY(-1);
+    -webkit-transform:scaleY(-1);
+    -o-transform:scaleY(-1);
+    transform:scaleY(-1);
+    /*IE*/
+    filter:FlipV;
+}
+
+#mianfeishangmen{
+    color: #fff;
+}
+#mianfeishangmen:hover{
+    color: #b20002;
 }

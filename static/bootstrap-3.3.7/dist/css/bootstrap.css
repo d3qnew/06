@@ -5179,7 +5179,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     max-height: 340px;
 }
 
-@media (max-device-width: 480px) and (orientation: landscape) {
+@media (max-device-width: 390px) and (orientation: landscape) {
     .navbar-fixed-top .navbar-collapse,
     .navbar-fixed-bottom .navbar-collapse {
         max-height: 200px;
@@ -7686,7 +7686,6 @@ button.close {
     line-height: 64px;
     /*background-color: #333;*/
     font-size: 100px;
-    color: #999 !important;
     text-align: center;
     /*border: 3px solid #fff;*/
     /*-webkit-border-radius: 24px !important;*/
@@ -7713,7 +7712,7 @@ button.close {
     outline: 0;
     opacity: .9;
     /*border-color: #fff !important;*/
-    color: #e71f19 !important;
+    color: #a00000 !important;
 }
 
 .carousel-control .icon-prev,

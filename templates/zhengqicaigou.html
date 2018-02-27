@@ -1,0 +1,200 @@
+{% extends "layout.html" %}
+{% block css %}
+<style>
+    .col-xs-12, .col-sm-12, .col-md-4, .col-lg-4 {
+        float: left;
+    }
+
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        padding: 0;
+    !important;
+        margin: 0;
+    !important;
+    }
+
+    .anlishangxi-unit {
+        float: left;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .anlishangxi-unit img, .anlishangxi-unit div {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 992px) {
+        .anlishangxi-unit {
+            width: 25%;
+            min-height: 25em;
+            margin-bottom: 10px;
+        }
+
+        .anlishangxi-unit div {
+            padding: 5px 15px;
+
+        }
+
+        .anlishangxi-unit-first {
+            padding-top: 5em !important;
+        }
+
+        .unit1-h {
+            width: 400px;
+            height: 6em;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+        }
+
+        .unit1-h *, .unit2-h * {
+            color: #fff;
+        }
+
+        .unit2-h {
+            position: absolute;
+            right: 6%;
+            top: 52%;
+        }
+
+        .unit3-h {
+            position: absolute;
+            left: 13%;
+            top: 22%;
+        }
+
+        .unit2 img, .unit3 img {
+            width: 60%;
+        }
+
+        .unit2-p {
+            width: 800px;
+            background-color: #f8f8f8;
+            position: absolute;
+            top: 24%;
+            min-height: 50%;
+            text-align: center;
+            padding-top: 3em;
+        }
+        .unit2-p span{
+            display: block;
+            float: left;
+            width: 25%;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .unit3-p {
+            width: 800px;
+            background-color: #fff;
+            position: absolute;
+            top: 24%;
+            right:0px;
+            min-height: 50%;
+            text-align: center;
+            padding-top: 3em;
+            padding-left: 1em;
+        }
+        .unit3-p span{
+            display: block;
+            float: left;
+            width: 25%;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+
+<div class=" container">
+    <div class="row" style="border:none;padding: 0;margin: 0; position: relative">
+        <img src="../static/img/zhengqicaigou/banner.jpg" style="width: 100%"/>
+        <div class="unit1-h">
+            <h1>{{ txtj['bannertitle'][0] }}</h1>
+            <h3>{{ txtj['bannertitle'][1] }}</h3>
+            <p>{{ txtj['bannertitle'][2] }}</p>
+        </div>
+    </div>
+</div>
+
+<div style="background-color: #f8f8f8;width: 100%">
+    <div class=" container">
+        <div class="row unit2" style="border:none;padding: 0;margin: 0; position: relative;">
+            <img src="../static/img/zhengqicaigou/anli-1.jpg" style="float: right;"/>
+            <div class="unit2-h">
+                <h3>{{ txtj['anlizonglan']['shilingguan']['tuwen']['h'] }}</h3>
+                {% for i in txtj['anlizonglan']['shilingguan']['tuwen']['p'] %}
+                <p>{{ i }}</p>
+                {% endfor %}
+
+            </div>
+            <div class="unit2-p">
+                <h3>{{ txtj['anlizonglan']['shilingguan']['zhengwen']['h'] }}</h3>
+                <div>
+                    {% for i in txtj['anlizonglan']['shilingguan']['zhengwen']['p'] %}
+                    <span>{{ i }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class=" container">
+    <div class="row unit3" style="border:none;padding: 0;margin: 0; position: relative">
+        <img src="../static/img/zhengqicaigou/anli-2.jpg" style="float: left"/>
+        <div class="unit3-h">
+            <h3>{{ txtj['anlizonglan']['qitajigou']['tuwen']['h'] }}</h3>
+        {% for i in txtj['anlizonglan']['qitajigou']['tuwen']['p'] %}
+        <p>{{ i }}</p>
+        {% endfor %}
+        </div>
+
+        <div class="unit3-p">
+            <h3>{{ txtj['anlizonglan']['qitajigou']['zhengwen']['h'] }}</h3>
+        <div>
+            {% for i in txtj['anlizonglan']['qitajigou']['zhengwen']['p'] %}
+            <span>{{ i }}</span>
+            {% endfor %}
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<div style="background-color: #f8f8f8; width: 100%">
+    <div class=" container">
+        <div class="row unit4" style="border:none;padding: 0;margin: 0; position: relative;">
+            <div class="anlishangxi-unit" style="background-color: #f8f8f8">
+                <div class="anlishangxi-unit-first" style="padding-left: 0">
+                    <h1>{{ txtj['anlishangxi']['h']['h'] }}</h1>
+                    <p style="font-weight: 500">{{ txtj['anlishangxi']['h']['p'] }}</p>
+                </div>
+
+            </div>
+            {% for i in txtj['anlishangxi']['p'] %}
+            <div class="anlishangxi-unit">
+                <img src="../static/img/zhengqicaigou/anlishangxi-{{ loop.index }}.jpg"/>
+                <div>
+                    <h4>{{ i['h'] }}</h4>
+                    <p>{{ i['p'] }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <br><br>
+
+</div>
+
+
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

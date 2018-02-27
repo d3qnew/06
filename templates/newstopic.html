@@ -72,16 +72,16 @@
     </div>
 <br><br><br><br><br><br><br><br>
 </div>
-
+<span id="txt" style="display: none">{{ txt }}</span>
 
 {% endblock %}
 {% block js %}
 
 <script>
 
-    var txt = zhuanma.htmlDecodeByRegExp("{{txt}}");
-    txt = $.parseJSON(txt.replace(/'/g, '"'));
-    txt.year = formatdaste(txt.year);
+    var txt = $("#txt").text();
+    txt = $.parseJSON(txt);
+    txt.year = formatdate(txt.year);
     var vm = new Vue({
         el: '#newsmain',
         data: {

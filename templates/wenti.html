@@ -1,8 +1,22 @@
 {% extends "layout.html" %}
 {% block css %}
 
+
 <style>
 
+    .txttop {
+        font-size: 16px;
+        padding: 5px;
+        text-align: left;
+        background-color: #e6e6e6;
+        border: solid 2px #fff;
+    }
+
+    .txtmain {
+        display: none;
+        text-align: left;
+        background-color: white;
+    }
 
 
 </style>
@@ -11,13 +25,51 @@
 {% endblock %}
 {% block content %}
 
+
 <div class="container">
-wenti
+
+    <h2 style="text-align:left; padding-bottom:10px;">常见问题</h2>
+
+
+    <div class="wentimain">
+    </div>
+    <br/><br/><br/>    <br/><br/><br/>    <br/><br/><br/>    <br/><br/><br/>    <br/><br/><br/>
+
+
 </div>
 
+<span id="txt" style="display: none">{{ txt }}</span>
 
 
 {% endblock %}
 {% block js %}
+
+
+<script>
+    $(function () {
+        var txt = $("#txt").text();
+        txt = $.parseJSON(txt);
+        for (var i in txt) {
+            var i0 = txt[i]["q"];
+            var i1 = txt[i]["a"];
+            var wentimain = `<div class="txttop"><span class="glyphicon glyphicon-edit"style="float:left;"></span>&nbsp;&nbsp;<b>${i0}</b><span class="sanjiao glyphicon glyphicon-triangle-bottom"style="float:right;"></div><div class="txtmain"><p>${i1}</p></div>`;
+            $(".wentimain").append(wentimain);
+        }
+        $(".txttop").click(function () {
+            $(this).next(".txtmain").slideToggle("slow");
+            if ($(this).children(".sanjiao").hasClass("glyphicon-triangle-top")) {
+                $(this).children(".sanjiao").removeClass("glyphicon-triangle-top");
+                $(this).children(".sanjiao").addClass("glyphicon-triangle-bottom");
+            }
+            else {
+                $(this).children(".sanjiao").removeClass("glyphicon-triangle-bottom");
+                $(this).children(".sanjiao").addClass("glyphicon-triangle-top");
+            }
+        });
+    });
+
+
+</script>
+
 
 {% endblock %}

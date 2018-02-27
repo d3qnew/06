@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+
+{% block css %}
+
+<style>
+    .col-xs-12, .col-sm-12, .col-md-6, .col-lg-6 {
+        float: left;
+    }
+
+    #c1 p {
+        padding: 0 15px;
+        width: 100%;
+        text-align: left;
+    }
+
+    @media screen and (min-width: 992px) {
+
+        #c1 div {
+            text-align: center !important;
+            margin-bottom: 50px;
+        }
+
+        #c1 p {
+            text-align: center !important;
+            width: 900px;
+            margin: auto;
+        }
+
+        #c1 h2 {
+            margin-top: 50px;
+        }
+
+        #temp-weizhi1{
+            padding-top: 40px;
+        }
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+
+<div id="c1" v-cloak>
+    <div style="text-align: center" v-for="n,k,i in c1">
+        <img style="width: 100%" v-bind:src="[['../static/img/huanjingguanli/l'+(i+1)+'.jpg']]"/>
+        <h2>[[ k ]]</h2>
+        <p>[[ n ]]</p>
+    </div>
+    <div><img style="width: 100%" src="../static/img/huanjingguanli/l4.jpg"/></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12, col-sm-12, col-md-6, col-lg-6" style="text-align: center;">
+            <img style="width: 80%;padding: 30px" src="../static/img/huanjingguanli/l5.png"/>
+        </div>
+
+        <div class="col-xs-12, col-sm-12, col-md-6, col-lg-6" id="temp-weizhi1">
+            <img src="../static/img/huanjingguanli/logo.png"/>
+            <br><br>
+
+            <p>
+                美驰认为，门窗是房屋的重要组成部分,对改善室内环境、提高居住质量具有至关重要的作用。美驰尊重南北方不同环境差异以及用户对改善居住环境的不同需求，不断探索、精益求精；在行业内率先成立研究所，时刻与国际先进技术交流，研发并推出能够管理室内环境的窗系统。采用美国超级中空玻璃、super
+                spacer超级间隔条，超强密封，有效隔绝室外噪音和PM2.5等污染物，且中空层的分子筛可以同时吸附中空玻璃中的水分和残留有机物，使中空玻璃即使在很低温度下仍然保持光洁透明，拒绝凝霜困扰。凭借强大企业实力，争取到德国恩欣格在中国范围内的唯一授权，其多腔隔热技术，节能降噪效果显著……
+            </p>
+            <p>
+                你可能无法改变人类生存的大环境，但美驰会为你的居住的室内环境负责，把熟悉的“味道”变得安全，让家回归真正的恬静。
+            </p>
+            <br>
+            <span style="padding: 9px;float: left">
+               <img src="../static/img/huanjingguanli/i1.png" style="width: 4em"/>
+                <p>超级静音</p>
+            </span>
+            <span style="padding: 9px;float: left">
+               <img src="../static/img/huanjingguanli/i2.png" style="width: 4em"/>
+                <p>超级降霜</p>
+            </span>
+            <span style="padding: 9px;float: left">
+               <img src="../static/img/huanjingguanli/i3.png" style="width: 4em"/>
+                <p>超级寿命</p>
+            </span>
+            <span style="padding: 9px;float: left">
+               <img src="../static/img/huanjingguanli/i4.png" style="width: 4em"/>
+                <p>超级节能</p>
+            </span>
+
+        </div>
+
+
+    </div>
+</div>
+
+<br><br><br>
+
+<p id="txt" style="display: none" valx="{{txt}}"></p>
+
+{% endblock %}
+{% block js %}
+<script>
+
+    $(function () {
+
+        var txt = $("#txt").attr("valx");
+        txt = $.parseJSON(txt.replace(/'/g, '"'));
+        var hjgl = new Vue({
+            el: '#c1',
+            data: {
+                c1: txt['c1']
+            },
+            delimiters: ['[[', ']]']
+        });
+
+
+    });
+
+
+</script>
+
+
+{% endblock %}

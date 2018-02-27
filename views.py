@@ -4,6 +4,7 @@ from app import login_manger
 from form import Login_Form, Register_Form
 from model import Users
 from flask_login import login_user, logout_user, login_required, current_user
+import json
 from txt import txt
 from app import db, app
 
@@ -90,6 +91,7 @@ def story():
         'story.html',
         title='品牌故事',
         year=datetime.now().year,
+        txt=txt["story"]
 
     )
 
@@ -110,14 +112,14 @@ def news():
             'newstopic.html',
             title='品牌动态',
             year=datetime.now().year,
-            txt=txt['news'][int(id)]
+            txt=json.dumps(txt['news'][int(id)], ensure_ascii=False)
         )
     else:
         return render_template(
             'news.html',
             title='品牌动态',
             year=datetime.now().year,
-            txt=txt['news']
+            txt=json.dumps(txt['news'], ensure_ascii=False)
 
         )
 
@@ -128,7 +130,7 @@ def joinus():
     return render_template(
         'joinus.html',
         title='joinus',
-        zhaopin = txt['joinus']['zhaopin'],
+        zhaopin=json.dumps(txt['joinus']['zhaopin'], ensure_ascii=False),
         year=datetime.now().year
     )
 
@@ -150,7 +152,7 @@ def agency():
         'agency.html',
         title='agency',
         year=datetime.now().year,
-        mapdate=txt['agency']
+        mapdate=json.dumps(txt['agency'], ensure_ascii=False)
     )
 
 
@@ -162,6 +164,7 @@ def baowen():
         title='baowen',
         year=datetime.now().year
     )
+
 
 # 静音
 @app.route('/jingyin')
@@ -182,25 +185,30 @@ def mifeng():
         year=datetime.now().year
     )
 
-#售后
+
+# 售后
 @app.route('/fuwu')
 def shouhou():
     return render_template(
         'fuwu.html',
         title='fuwu',
-        year=datetime.now().year
+        year=datetime.now().year,
+        txt=json.dumps(txt['ServiceCenter'], ensure_ascii=False)
     )
 
-#问题
+
+# 问题
 @app.route('/wenti')
 def wenti():
     return render_template(
         'wenti.html',
         title='wenti',
-        year=datetime.now().year
+        year=datetime.now().year,
+        txt=json.dumps(txt['faq'], ensure_ascii=False)
     )
 
-#极简生活
+
+# 极简生活
 @app.route('/jijianshenghuo')
 def jijianshenghuo():
     return render_template(
@@ -209,7 +217,8 @@ def jijianshenghuo():
         year=datetime.now().year
     )
 
-#轻奢品质
+
+# 轻奢品质
 @app.route('/qingshepinzhi')
 def qingshepinzhi():
     return render_template(
@@ -218,7 +227,8 @@ def qingshepinzhi():
         year=datetime.now().year
     )
 
-#传世至尊
+
+# 传世至尊
 @app.route('/chuanshizhizun')
 def chuanshizhizun():
     return render_template(
@@ -227,12 +237,68 @@ def chuanshizhizun():
         year=datetime.now().year
     )
 
-#传世至尊
+
+# 传世至尊
 @app.route('/shejishi')
 def shejishi():
     return render_template(
         'shejishi.html',
         title='shejishi',
-        txt=txt['shejishi'],
+        year=datetime.now().year,
+        txt=json.dumps(txt['shejishi'], ensure_ascii=False)
+
+    )
+
+
+# 环境管理
+@app.route('/huanjingguanli')
+def huanjingguanli():
+    return render_template(
+        'huanjingguanli.html',
+        title='huanjingguanli',
+        year=datetime.now().year,
+        txt=json.dumps(txt["huanjingguanli"], ensure_ascii=False)
+
+    )
+
+
+# ex88
+@app.route('/ex88')
+def ex88():
+    return render_template(
+        'ex88.html',
+        title='EX88',
         year=datetime.now().year
+    )
+
+
+# dr65
+@app.route('/dr65')
+def dr65():
+    return render_template(
+        'dr65.html',
+        title='DR65',
+        year=datetime.now().year
+    )
+
+
+# m76
+@app.route('/m76')
+def m76():
+    return render_template(
+        'm76.html',
+        title='M76',
+        year=datetime.now().year
+    )
+
+
+# 政府采购
+@app.route('/zhengqicaigou')
+def zhengqicaigou():
+    return render_template(
+        'zhengqicaigou.html',
+        title='zhengqicaigou',
+        year=datetime.now().year,
+        txt=json.dumps(txt["zhengqicaigou"], ensure_ascii=False),
+        txtj = txt["zhengqicaigou"]
     )

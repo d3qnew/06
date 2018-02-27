@@ -115,6 +115,19 @@
             border-top: 1px solid #ccc;
             padding: 30px 0;
         }
+
+        .unit1-h {
+            padding: 28px 64px;
+            width: 360px;
+            position: absolute;
+            top: 20%;
+            left: 12%;
+            background-color: #c2ebfd;
+        }
+
+        .unit1-h * {
+            color: #2868ff;
+        }
     }
 
 </style>
@@ -122,7 +135,11 @@
 {% block content %}
 <div class="container">
     <div class="row" style="border:none;padding: 0;margin: 0">
-        <img class="img-l" src="../static/img/fuwu/01.png"/>
+        <img class="img-l" src="../static/img/fuwu/fuwu.jpg"/>
+        <div class="unit1-h">
+            <h3>美驰预约热线:</h3>
+            <h1>400-081-3338</h1>
+        </div>
     </div>
 
     <div class="row" style="border:none;">
@@ -132,8 +149,6 @@
         <p>
             美驰凭借22年丰富广泛的服务经验，依托公司各岗位在职15年以上的巨匠级员工，从售前、售中、售后全方位设计门窗服务规范化流程，环环相扣、层层保障，确保给客户带来完美的购买和使用体验。
         </p>
-
-
     </div>
 
 
@@ -144,7 +159,11 @@
                 <h2>售前服务</h2>
             </div>
             <div>
-                <img class="fangda" v-for="n,k,i in a7" v-bind:src="[['../static/img/fuwu/shouqian-'+ n +'.png']]"/>
+                <div style="display: inline-block"  v-for="n,i in sanduan[0]['zhengwen']">
+                    <img class="fangda" v-bind:src="[['../static/img/fuwu/shouqian-'+ (i+1) +'.png']]"/>
+                    <div style="text-align: center">[[ n ]]</div>
+                </div>
+
             </div>
         </div>
         <div class="tubiaodiv col-xs-12, col-sm-12, col-md-4, col-lg-4">
@@ -152,7 +171,11 @@
                 <h2>售中服务</h2>
             </div>
             <div>
-                <img class="fangda" v-for="n,k,i in a8" v-bind:src="[['../static/img/fuwu/shouzhong-'+ n +'.png']]"/>
+
+                <div style="display: inline-block"  v-for="n,i in sanduan[1]['zhengwen']">
+                    <img class="fangda" v-bind:src="[['../static/img/fuwu/shouzhong-'+ (i+1) +'.png']]"/>
+                    <div style="text-align: center">[[ n ]]</div>
+                </div>
             </div>
 
         </div>
@@ -161,7 +184,10 @@
                 <h2>售后服务</h2>
             </div>
             <div>
-                <img class="fangda" v-for="n,k,i in a7" v-bind:src="[['../static/img/fuwu/shouhou-'+ n +'.png']]"/>
+                <div style="display: inline-block"  v-for="n,i in sanduan[2]['zhengwen']">
+                    <img class="fangda" v-bind:src="[['../static/img/fuwu/shouhou-'+ (i+1) +'.png']]"/>
+                    <div style="text-align: center">[[ n ]]</div>
+                </div>
             </div>
         </div>
     </div>
@@ -183,19 +209,14 @@
             </li>
         </ul>
     </div>
-
     <div class="row">
         <h2>美驰尊享服务流程</h2>
-
         <div class="zunxiangfuwu_tree">
             <embed src="../static/img/fuwu/liuchengtu.svg" type="image/svg+xml"
                    pluginspage="http://www.adobe.com/svg/viewer/install/"/>
         </div>
-
     </div>
-
     <div class="row">
-
         <div style="float: left" class="weixin weixin_l col-xs-12, col-sm-12, col-md-6, col-lg-6">
             <h2>整窗三年全面保障</h2>
             <p>顾客所购买产品自安装之日起，三年内，正常使用情况下，整窗因工艺或安装出现的产品瑕疵，美驰将给予修理、更换或适当调整。同时美驰将承担由自身引起的修理、备用件、人工以及维修人员交通等费用。
@@ -225,17 +246,11 @@
 
         </div>
         <div style="float: right" class="weixin weixin-r col-xs-12, col-sm-12, col-md-6, col-lg-6">
-
             <h2>重要部件全面担保</h2>
-
             <p>
                 美驰深知“恬静生活”是每一个家庭幸福的重要因素，所以在产品正常使用情况下，对中空玻璃、密封胶条、五金、型材老化等出现的问题，进行专项长效质保。专项质保期间，美驰将依据售后政策对产品进行修理或是做适当调整。
-
             </p>
-
             <p>具体产品售后政策：</p>
-
-
             <table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
                 <tr>
                     <td width="64"><p align="center"><a name="OLE_LINK17"></a><a name="OLE_LINK16">产品</a></p></td>
@@ -311,12 +326,14 @@
 
 <br><br>
 
-<div id="txt" style="display: none">{{ txt }}</div>
+<span id="txt" style="display: none;">{{ txt }}</span>
 {% endblock %}
 {% block js %}
 <script>
     $(function () {
 
+        var txt = $.parseJSON($("#txt").text());
+        //console.log(txt['sanduan'][0]['zhengwen']);
         //var a7 = new Array(7).fill(0).map((v, i) => i + 1);
         //var a8 = new Array(8).fill(0).map((v, i) => i + 1);
         var a7 = [1, 2, 3, 4, 5, 6, 7];
@@ -339,7 +356,8 @@
             el: '#tubiao',
             data: {
                 a7: a7,
-                a8: a8
+                a8: a8,
+                sanduan: txt['sanduan']
             },
             delimiters: ['[[', ']]']
 
@@ -363,11 +381,9 @@
         });
 
 
-
-
         $(window).on("scroll", function () {
-            ding($(".ding"));
-            ding($("#weixin li"));
+            ding($(".ding"), 30, 0);
+            ding($("#weixin li"), 30, 0);
         });
 
 

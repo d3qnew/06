@@ -2,53 +2,503 @@
 {% block css %}
 
 <style>
+
+    body {
+        background-color: #f3f3f3;
+    }
+
     .carousel-caption {
         height: 3em;
         margin-top: -1.5em;
-        font-size:26px;
+        font-size: 26px;
     }
+
+    .index-zhengwen {
+        text-align: center;
+    }
+
+    .i-2 {
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .i-2-bk {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 1em;
+    }
+
+    .i-2-bk img {
+        width: 100%;
+    }
+
+    .i-2-bk p {
+        text-align: left;
+    }
+
+    .i-2-bk h1 {
+        font-weight: 600;
+    }
+
+    .i-2-bk h3, h1 {
+
+    }
+
+    .i-2-bk div {
+        background-color: #e71f19;
+        color: #fff;
+    }
+
+    .i-2-bk-w {
+        padding: 15px 0;
+    }
+
+    .i-4 img {
+        width: 100%;
+    }
+
+    .i-4 a {
+        background-color: #e71f19;
+        color: #fff;
+        padding: 5px 15px;
+    }
+
+    .i-4 .row {
+        margin-bottom: 1em;
+    }
+
+    .i-5-i {
+        text-align: center;
+    }
+
+    .i-5-i div {
+        margin: auto;
+    }
+
+    .i-5-i span {
+        width: 33.3333%;
+        float: left;
+        padding: 15px;
+    }
+
+    .i-5-i img {
+        width: 100%;
+    }
+
+    .i-5-c {
+        margin-bottom: 1em;
+    }
+
+    .fangda {
+        float: left;
+    }
+
+    @media screen and (min-width: 992px) {
+        #i-3 {
+            display: block !important;
+        }
+
+        .i-2 {
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 60px;
+            position: relative;
+            box-shadow: 0px 5px 25px 0px rgba(64, 64, 64, 0.3);
+        }
+
+        .i-2 + .i-2-bk {
+            padding-top: 16px;
+        }
+
+        .i-2-bk {
+            width: 50%;
+            height: 235px;
+            float: left;
+            margin: 0px;
+        }
+
+        .i-2-bk img {
+            height: 100%;
+        }
+
+        .i-2-bk p {
+            text-align: center;
+        }
+
+        .i-2-bk div {
+            width: 50%;
+            height: 100%;
+        }
+
+        .i-2-bk-1 div {
+            float: left;
+        }
+
+        .i-2-bk-2 div {
+            float: right;
+        }
+
+        .i-2-bk-w {
+            padding-top: 60px;
+            overflow: hidden;
+        }
+
+        .i-2-bk-w div {
+            width: 100%;
+            float: left;
+        }
+
+        .i-2-bk-w h3 {
+            font-size: 16px;
+        }
+
+        .i-2-bk-i {
+            overflow: hidden;
+        }
+
+        #i-3 {
+            margin-top: 24px;
+        }
+
+        .i-4 {
+            margin-top: -300px;
+        }
+
+        .i-4 img {
+            width: 60%;
+            margin-top: -30px;
+        }
+
+        .i-4 .row {
+            background-color: #fff;
+            height: 552px;
+            padding: 15px;
+            margin-bottom: 100px;
+        }
+
+        .i-4-w {
+            width: 40%;
+            padding: 30px;
+
+        }
+
+        .i-4-w p {
+            line-height: 2em;
+        }
+
+        .i-5-i {
+            margin-top: 50px;
+        }
+    }
+
+    .c2 {
+        min-width: 260px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 5px 25px 0px rgba(64, 64, 64, 0.3);
+    }
+
+    .c2bg {
+        width: 100%;
+        position: absolute;
+        text-align: right;
+    }
+
+    .c2bg div {
+        width: 16.6666%;
+        float: right;
+        display: none;
+    }
+
+    .c2bg img {
+        width: 100%;
+        float: left;
+    }
+
+    .c2val img {
+        width: 100%;
+        height: 100%;
+        float: left;
+    }
+
+    .c2t {
+        color: #fff;
+        float: left;
+        opacity: 0;
+        text-align: left;
+    }
+
+    .c2d {
+        text-align: center;
+        height: 2em;
+        vertical-align: top;
+        overflow: hidden;
+    }
+
+    .c2u {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    .c2u li {
+        margin: 0px 15px;
+        display: inline-block;
+        font-size: 48px;
+        line-height: 12px;
+        color: #ccc;
+        margin: 0 8px;
+        list-style: none;
+    }
+
+    .c2u a {
+        display: block;
+        padding: 0px;
+        line-height: 1em;
+        margin-top: -1em;
+        color: #ccc;
+    }
+
+    .c2u li a:hover {
+        color: #349bd7;
+        cursor: pointer;
+    }
+
+    .c2tt {
+        width: 100%;
+        display: block;
+        clear: both;
+        opacity: 85;
+        height: 80px;
+        float: left;
+    }
+
+    .c2tt span {
+        display: block;
+        margin: 12px 0 12px 24px;
+        font-size: 18px;
+        letter-spacing: 1px
+    }
+
+    .carousel-control {
+        cursor: pointer;
+        height: 1em;
+        line-height: 1em;
+    }
+
+
 </style>
 
 
 {% endblock %}
 {% block content %}
 
-<div>
-    <div class="carousel container slide " id="carousel-525475">
-        <!--
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-525475" data-slide-to="0">
-            </li>
-            <li data-target="#carousel-525475" data-slide-to="1">
-            </li>
-            <li data-target="#carousel-525475" data-slide-to="2">
-            </li>
-        </ol>
-        -->
-        <div class="carousel-inner">
-            <div class="item next left">
-                <img alt="" src="../static/img/banner.1.jpg"/>
-                <div class="carousel-caption">
 
-                    行业公认的中国首家高品质门窗制造服务商
-                </div>
+<div class="nulldiv" id="c2null"></div>
+<div class="box">
+    <div class="c c2">
+        <div class="c2bg">
+            <div id="c2bg1"><img src="../static/img/c2/bg1.png"/><img src="../static/img/c2/bg1.png"/><img
+                    src="../static/img/c2/bg1.png"/><img src="../static/img/c2/bg1.png"/></div>
+            <div id="c2bg2"><img src="../static/img/c2/bg2.png"/><img src="../static/img/c2/bg2.png"/><img
+                    src="../static/img/c2/bg2.png"/><img src="../static/img/c2/bg2.png"/></div>
+            <div id="c2bg3"><img src="../static/img/c2/bg1.png"/><img src="../static/img/c2/bg1.png"/><img
+                    src="../static/img/c2/bg1.png"/><img src="../static/img/c2/bg1.png"/></div>
+            <div id="c2bg4"><img src="../static/img/c2/bg2.png"/><img src="../static/img/c2/bg2.png"/><img
+                    src="../static/img/c2/bg2.png"/><img src="../static/img/c2/bg2.png"/></div>
+            <div id="c2bg5"><img src="../static/img/c2/bg1.png"/><img src="../static/img/c2/bg1.png"/><img
+                    src="../static/img/c2/bg1.png"/><img src="../static/img/c2/bg1.png"/></div>
+            <div id="c2bg6"><img src="../static/img/c2/bg2.png"/><img src="../static/img/c2/bg2.png"/><img
+                    src="../static/img/c2/bg2.png"/><img src="../static/img/c2/bg2.png"/></div>
+        </div>
+        <div class="c2val">
+            <div id="c2val1" class="c2valdiv" style="display: block;">
+                <img src="../static/img/banner.1.jpg"/>
+                <div class="c2t" id="c2t1"><span></span></div>
             </div>
-            <div class="item">
-                <img alt="" src="../static/img/banner.2.jpg"/>
-                <div class="carousel-caption">
-
-                    免费服务月至今已连续23年
-                </div>
+            <div id="c2val2" class="c2valdiv" style="display: none;">
+                <img src="../static/img/banner.2.jpg"/>
+                <div class="c2t" id="c2t2"><span></span></div>
             </div>
-            <div class="item active left">
-                <img alt="" src="../static/img/banner.3.jpg"/>
-                <div class="carousel-caption">
-                    即将开始&nbsp;&nbsp;全新模式&nbsp;&nbsp;全新配置&nbsp;&nbsp;全新服务
-                </div>
+            <div id="c2val3" class="c2valdiv" style="display:none;">
+                <img src="../static/img/banner.3.jpg"/>
+                <div class="c2t" id="c2t3"><span></span></div>
+            </div>
+            <div id="c2val4" class="c2valdiv" style="display:none;">
+                <img src="../static/img/banner.4.jpg"/>
+                <div class="c2t" id="c2t4"><span></span></div>
             </div>
         </div>
-        <a class="left carousel-control" href="#carousel-525475" data-slide="prev">‹</a>
-        <a class="right carousel-control" href="#carousel-525475" data-slide="next">›</a>
+
+    </div>
+
+    <a class="left carousel-control " id="c2left" data-slide="prev">&laquo;</a>
+    <a class="right carousel-control" style="transform: scale(-1,1);" data-slide="next">&laquo;</a>
+
+    <!--<div class="c c2d">-->
+    <!--<ul class="c2u">-->
+    <!--<li id="cb1"><a>•</a></li>-->
+    <!--<li id="cb2"><a>•</a></li>-->
+    <!--<li id="cb3"><a>•</a></li>-->
+    <!--<li id="cb4"><a>•</a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+
+</div>
+
+<div class="container index-zhengwen">
+    <div class="row  i-2">
+        <div style="background-color: #fff" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 i-2-bk">
+            <h1>行业公认的中国高品质门窗领导者</h1>
+            <p>美驰客户遍及各界名流要员</p>
+            <p>也在诸如中南海、人民大会堂、首都机场、驻外使领馆等标志性建筑上使用</p>
+            <p>二十三年,美驰门窗已为数十万家庭提供完美恬静生活</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 i-2-bk i-2-bk-1">
+            <div class="i-2-bk-i">
+                <img class="fangda" src="../static/img/m1.jpg"/>
+                <img class="fangda" src="../static/img/b1.jpg"/>
+                <img class="fangda" src="../static/img/g1.jpg"/>
+            </div>
+            <div class="i-2-bk-w">
+                <div>
+                    <h1>中南海</h1>
+                    <h3>Zhong Nanhai</h3>
+                </div>
+                <div>
+                    <h1>东山墅</h1>
+                    <h3>dong shan villa</h3>
+                </div>
+                <div>
+                    <h1>蓝堡国际公寓</h1>
+                    <h3>Rambo International Apartment</h3>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 i-2-bk i-2-bk-2">
+            <div class="i-2-bk-i">
+                <img class="fangda" src="../static/img/m2.jpg"/>
+                <img class="fangda" src="../static/img/b2.jpg"/>
+                <img class="fangda" src="../static/img/g2.jpg"/>
+            </div>
+            <div class="i-2-bk-w">
+                <div>
+                    <h1>人民大会堂</h1>
+                    <h3>THE GREAT HALL OF THE PEOPLE,CHINA</h3>
+                </div>
+                <div>
+                    <h1>东方普罗旺斯</h1>
+                    <h3>dong fang Provence</h3>
+                </div>
+                <div>
+                    <h1>宁波东寅</h1>
+                    <h3>Ningbo Dongyin</h3>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 i-2-bk  i-2-bk-2">
+            <div class="i-2-bk-i">
+                <img class="fangda" src="../static/img/m3.jpg"/>
+                <img class="fangda" src="../static/img/b3.jpg"/>
+                <img class="fangda" src="../static/img/g3.jpg"/>
+            </div>
+            <div class="i-2-bk-w">
+                <div>
+                    <h1>使领馆</h1>
+                    <h3>DIPLOMATIC AND CONSULAR MISSIONS</h3>
+                </div>
+                <div>
+                    <h1>西山壹号院</h1>
+                    <h3>west CHATEAU</h3>
+                </div>
+                <div>
+                    <h1>雅戈尔新海景花园</h1>
+                    <h3>Yagore New Sea View Garden</h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h1>核心理念</h1>
+
+    </div>
+
+</div>
+
+<div id="i-3" style="height: 360px;background-color: #e71f19;width: 100%; display: none"></div>
+
+<div class="i-4-c" style="background-color: #f3f3f3;padding-top: 15px;padding-bottom: 15px">
+    <div class="container i-4">
+        <div class="row">
+            <div><img class="ding" style="float: right" src="../static/img/i-4-1.jpg"/></div>
+            <div class="i-4-w">
+                <h1><span>关注</span>室内环境，给家更多的爱</h1>
+                <p>
+                    窗户是居室内调节环境的唯一通道，一扇好的窗户不仅要遮风挡雨，还应对室内光环境、空气环境、声音环境进行智能调节。美驰2017年全新推出智能窗系统，从室内环境出发，依据人的多重感官，通过门窗性能对室内环境进行智能调节，以达到真正恬静的家居生活感受。
+                </p>
+                <a href="/huanjingguanli">了解更多</a>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div><img class="ding" style="float: left" src="../static/img/i-4-2.jpg"/></div>
+            <div class="i-4-w" style="float:right;">
+                <h1>
+                    巨匠芯-中国门窗行业的里程碑
+                </h1>
+                <p>
+                    为成就中国门窗行业典范，给消费者带来真正国际水准的高品质门窗，美驰凭借对消费者需求的深入洞察依托公司拥有诸多15年以上门窗加工经验的巨匠级员工，全新推出“巨匠芯”，以超凡实力和巨匠标准进行新产品研发，致力于为中国消费者制造真正的高端门窗享受。
+                </p>
+
+                <a href="/news?id=1">了解更多</a>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div><img class="ding" style="float: right;" src="../static/img/i-4-3.jpg"/></div>
+            <div class="i-4-w">
+                <h1>
+                    全天候 尊享服务
+                </h1>
+                <p>
+                    作为中国门窗行业的开拓者，美驰致力于让更多的用户体验到更恬静的家居生活。美驰悉心洞察客户的每一份需求，以求将品质做到极致，我们对窗户的定义不只局限于遮风挡雨，更是每一个恬静家园的守护者。美驰专注于服务，始终坚持让客户省心、省力的服务理念；所有产品均承诺三年质保，终身维护；保证4小时快速反应，全天候24小时上门维修。从建立之初至今，每年定期举办“免费服务月”活动，持续为客户提供优质、专业的门窗服务。
+                </p>
+
+                <a href="/fuwu">了解更多</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-color: #fff;width: 100%;padding: 36px 0">
+    <div class="container i-5-c">
+        <div class="row " style="font-size: 36px;text-align: center">
+            <span style="text-decoration:line-through;color: #e71f19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span style="font-weight: 500">快速浏览</span>
+            <span style="text-decoration:line-through;color: #e71f19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+        <div class="row i-5-i">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 kuaisuliulan">
+                <span><a href="#"><img src="../static/img/i-5-1.png"/></a></span>
+                <span><a href="/news"><img src="../static/img/i-5-2.png"/></a></span>
+                <span><a href="#"><img src="../static/img/i-5-3.png"/></a></span>
+
+            </div>
+
+        </div>
+
     </div>
 </div>
 
@@ -57,5 +507,7 @@
 
 
 {% block js %}
-<script src="../static/js/myjs/index.js"></script>
+
+
+<script> $.getScript("../static/js/myjs/index.js");</script>
 {% endblock %}

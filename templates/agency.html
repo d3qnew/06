@@ -65,6 +65,8 @@
     <div class="mmmap col-xs-12 col-sm-12 col-md-9 col-lg-9" id="container"></div>
 </div>
 
+    <span id="txt" style="display: none;">{{ mapdate }}</span>
+
 <br><br><br>
 
 {% endblock %}
@@ -80,8 +82,8 @@
     });
 
     var p = [];
-    var bdata = zhuanma.htmlDecodeByRegExp("{{ mapdate }}");
-    bdata = $.parseJSON(bdata.replace(/'/g, '"'));
+    var bdata = $("#txt").text();
+    bdata = $.parseJSON(bdata);
     //console.log(data);
     var infoWin = new qq.maps.InfoWindow({
         map: map

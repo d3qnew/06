@@ -2,8 +2,44 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="baidu-site-verification" content="s4HseEiY2S" />
+    <script src="../static/js/lib/jquery-1.9.1.min.js"></script>
+    <script>
+        $("head").ready(function () {
+            browservsion = '';
+            if (/firefox/.test(navigator.userAgent.toLowerCase())) {
+                browservsion = 'firefox';
+            }
+            if (/webkit/.test(navigator.userAgent.toLowerCase())) {
+                browservsion = 'webkit';
+            }
+            if (/opera/.test(navigator.userAgent.toLowerCase())) {
+                browservsion = 'opera';
+            }
+            if ((/Trident\/7\./).test(navigator.userAgent)) {
+                browservsion = 'ie11';
+            }
+            if (/msie/.test(navigator.userAgent.toLowerCase())) {
+
+                if ('undefined' == typeof(document.body.style.maxHeight)) {
+                    browservsion = 'ie6';
+                }
+                if (!$.support.leadingWhitespace) {
+                    browservsion = 'ie8';
+                }
+                browservsion = 'oie';
+            }
+            if (browservsion === '') {
+                browservsion = 'unknown';
+            }
+            //console.log(browservsion);
+
+
+        });
+    </script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -16,18 +52,22 @@
     <link rel="stylesheet" href="../static/js/navbar-buttom/hamburgers.css">
     <link rel="stylesheet" href="../static/css/main.css">
 
+    <!--<script language="javascript" src="http://kft.zoosnet.net/JS/LsJS.aspx?siteid=KFT79673393&float=1&lng=cn"></script>-->
+
     {% block css %}
     {% endblock %}
 
 </head>
 <body>
-<div  id="toplink"></div>
-<div style="position: fixed;clear: both; min-width: 480px; width: 100%; z-index: 999; background-color: #fff;top:0px;box-shadow:0px 0px 20px #333;">
+<div id="toplink"></div>
+<div id="topnavbar"
+     style="position: fixed;clear: both; min-width: 390px; width: 100%; z-index: 999; background-color: #fff;top:0px;box-shadow:0px 0px 5px #999;">
     <div class="index-top">
         <div class="container">
-            <span>全国服务热线：400-081-3338</span>
+            <span style="float: left">全国服务热线：400-081-3338</span>
             <a style="color: #e71f19 " href="/xtest">O</a>
-            <span id="mianfeisheji-layout" style="float: right">免费上门设计</span>
+            <span id="mianfeisheji-layout" style="float: right"><a id="mianfeishangmen"
+                                                                   href="http://kft.zoosnet.net/LR/Chatpre.aspx?id=KFT79673393&lng=cn">免费上门设计</a> </span>
         </div>
     </div>
     <div class="container tostatic topadding0">
@@ -73,7 +113,6 @@
                                 <div class="container tonavmenuls">
                                     <div class="navbar-top-line"></div>
                                     <li><a href="/jijianshenghuo">极简生活</a></li>
-                                    <li><a href="/qingshepinzhi">轻奢品质</a></li>
                                     <li><a href="/chuanshizhizun">传世至尊</a></li>
                                 </div>
                             </ul>
@@ -119,15 +158,9 @@
                             <ul class=" dropdown-menu maxwidth totopauto">
                                 <div class="container tonavmenuls">
                                     <div class="navbar-top-line"></div>
-                                    <li><a href="#">dr65</a></li>
-                                    <li><a href="#">m76</a></li>
-                                    <li><a href="#">ex88</a></li>
-                                    <li><a href="#">意大利Mixall</a></li>
-                                    <li><a href="#">国匠传奇铝包木</a></li>
-                                    <li><a href="#">德国贝伦思1909</a></li>
-                                    <li><a href="#">ds70外开门</a></li>
-                                    <li><a href="#">提升推拉门</a></li>
-                                    <li><a href="#">倾开推拉门</a></li>
+                                    <li><a href="/dr65">DR65</a></li>
+                                    <li><a href="/m76">M76</a></li>
+                                    <li><a href="/ex88">EX88</a></li>
                                 </div>
                             </ul>
                         </li>
@@ -142,8 +175,6 @@
                     </ul>
 
 
-
-
                 </div>
             </div>
         </nav>
@@ -151,85 +182,76 @@
 </div>
 <div class="cebianlan">
     <ul>
-        <li><a href="#"><img src="../static/img/service.png"/></a></li>
-        <li><a href="#"><img src="../static/img/call.png"/></a></li>
-        <li><a href="#"><img src="../static/img/weixin.png"/></a></li>
+        <li><a id="cebianlan1" href="http://kft.zoosnet.net/LR/Chatpre.aspx?id=KFT79673393&lng=cn"><img
+                style="color: #fff" src="../static/img/service.gif"/></a></li>
+        <li><a id="qr"><img src="../static/img/weixin.png"/></a></li>
+        <li><a id="call"><img src="../static/img/call.png"/></a></li>
         <li><a href="#toplink"><img src="../static/img/backtop.png"/></a></li>
-
     </ul>
 </div>
-<div style="margin-top: 126px"></div>
+<div class="cebianlan-qr cebianlan-kuozhan"><img src="../static/img/qr.jpg" style="width: 100%;height: 100%;"/></div>
+<div class="cebianlan-call cebianlan-kuozhan" style="padding-top: 3em"><h3>全国服务热线:</h3>
+    <h3>400-081-3338</h3></div>
+<div style="margin-top: 105px"></div>
 {% block content %}
 {% endblock %}
 <div class="container-fluid main-floor">
     <div class="container">
-        <ul class=" col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+        <ul class=" col-xs-6 col-sm-6 col-md-3 col-lg-2  main-floor-ul">
             <li><span>窗型概览</span>
                 <ul>
-                    <li>dr65</li>
-                    <li>m76</li>
-                    <li>ex88</li>
-                    <li>意大利Mixall</li>
-                    <li>国匠传奇铝包木</li>
-                    <li>德国贝伦思1909</li>
-                    <li>ds70外开门</li>
-                    <li>提升推拉门</li>
-                    <li>倾开推拉门</li>
+                    <li><a href="/wenti">常见问题</a></li>
+                    <li><a href="/fuwu">服务体系</a></li>
+                    <li><a href="/agency">查找零售店</a></li>
                 </ul>
             </li>
         </ul>
 
-        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+        <ul class="col-xs-6 col-sm-6 col-md-3 col-lg-2  main-floor-ul">
             <li><span>品牌天地</span>
                 <ul>
-                    <li>品牌故事</li>
-                    <li>品牌动态</li>
-                    <li>世界权威认证</li>
-                    <li>加入我们</li>
+                    <li><a href="/story">品牌故事</a></li>
+                    <li><a href="/news">品牌动态</a></li>
+                    <li><a href="/Certification">世界权威认证</a></li>
+                    <li><a href="/joinus">加入我们</a></li>
                 </ul>
             </li>
         </ul>
 
-        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+        <ul class="col-xs-6 col-sm-6 col-md-3 col-lg-2  main-floor-ul">
             <li><span>合作伙伴</span>
                 <ul>
-                    <li>政企采购</li>
-                    <li>成为合作伙伴</li>
-                    <li>渠道商加盟</li>
-                    <li>开发商采购</li>
+                    <li><a href="/zhengqicaigou">政企采购</a></li>
                     <li><a href="/shejishi">设计师合作</a></li>
                 </ul>
             </li>
         </ul>
 
-        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+        <ul class="col-xs-6 col-sm-6 col-md-3 col-lg-2  main-floor-ul">
             <li><span>服务中心</span>
                 <ul>
-                    <li>如何选购</li>
-                    <li>常见问题</li>
-                    <li>售后服务</li>
-                    <li>意见反馈</li>
-                    <li>查找零售店</li>
+                    <li><a href="/wenti">常见问题</a></li>
+                    <li><a href="/fuwu">服务体系</a></li>
+                    <li><a href="/agency">查找零售店</a></li>
                 </ul>
             </li>
         </ul>
 
-        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+        <ul class="col-xs-6 col-sm-6 col-md-3 col-lg-2  main-floor-ul">
             <li><span>产品案例</span>
                 <ul>
-                    <li>极简生活</li>
-                    <li>轻奢品质</li>
-                    <li>传世至尊</li>
+                    <li><a href="/jijianshenghuo">极简生活</a></li>
+                    <li><a href="/chuanshizhizun">传世至尊</a></li>
                 </ul>
             </li>
         </ul>
 
-        <ul class="col-xs-12 col-sm-12 col-md-3 col-lg-2  main-floor-ul">
+        <ul class="col-xs-6 col-sm-6 col-md-3 col-lg-2  main-floor-ul">
             <li><span>美驰门窗系统</span>
                 <ul>
-                    <li>保温系统</li>
-                    <li>静音系统</li>
-                    <li>密封系统</li>
+                    <li><a href="/baowen">保温系统</a></li>
+                    <li><a href="/jingyin">静音系统</a></li>
+                    <li><a href="/mifeng">密封系统</a></li>
 
                 </ul>
 
@@ -237,19 +259,63 @@
         </ul>
     </div>
 
+    <br><br>
+
 </div>
-<div style="color:#fff;text-align:center;border-top: 1px #0fff solid; height: 48px;line-height: 48px;background-color:#e71f19 ">
-    &copy; {{ year }} - 美驰集团 京icp05058264号
+<div style="width: 100%;margin: 0;padding: 0;border-top: 1px #ccc solid;background-color:#e71f19;">
+    <div class="container layout-bottom" style="text-align:left; line-height: 2em; ">
+        <p>集团公司地址:北京市顺义区后沙峪地区双裕街33号 </p>
+        <p>北京生产基地:北京市顺义区后沙峪地区后沙峪镇吉祥工业区吉宁路4号</p>
+        <p>上海生产基地:上海市金山区金山工业区亭林镇林贤路1388号</p>
+        <p style="float: right;margin-top: -3em;">&copy; {{ year }} - 美驰门窗 京icp05058264号</p>
+        <br>
+    </div>
+
 </div>
-<script src="../static/js/lib/jquery-3.2.1.js"></script>
-<script src="../static/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
-<script src="../static/js/myjs/layout.js"></script>
+
+<script>
+    $(function () {
+
+        if (browservsion != 'oie') {
+            //alert("gaga");
+            $.getScript("../static/bootstrap-3.3.7/dist/js/bootstrap.min.js");
+            $.getScript("../static/js/myjs/layout.js");
+            $.getScript("../static/js/navbar-buttom/buttonjs.js");
+            $.getScript("../static/js/myjs/navbar.open.js");
+            $.getScript("../static/js/lib/lazysizes.min.js");
+            $.getScript("../static/js/myjs/zhuanma.js");
+        } else {
+            alert('为给您呈现更好的浏览效果,请您使用各类浏览器的最新版本');
+            $("body").empty();
+            $("body").append('<img src = "../static/img/index.png" />');
+
+//            $("link").remove();
+//            $("body").find("img").remove();
+//            $("script").remove();
+//            $("body").find().each(function () {
+//                $(this).attr("class", "");
+//                $(this).attr("style", "");
+//            });
+        }
+
+
+    });
+
+
+</script>
 <script src="../static/js/myjs/lib.js"></script>
-<script src="../static/js/navbar-buttom/buttonjs.js"></script>
-<script src="../static/js/myjs/navbar.open.js"></script>
-<script src="../static/js/lib/lazysizes.min.js"></script>
-<script src="../static/js/lib/vue.js"></script>
-<script src="../static/js/myjs/zhuanma.js"></script>
+<script src="../static/js/lib/vue.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4eb55755958eab8586121f2ca74cc4fd";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
 {% block js %}
 {% endblock %}
 </body>
